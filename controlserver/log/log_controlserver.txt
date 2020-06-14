@@ -1,0 +1,870 @@
+('127.0.0.1', 44186), 2004-01-01 06:39:18,423: Started talking to 127.0.0.1:44186 on Thread-1
+('127.0.0.1', 44186), 2004-01-01 06:39:18,423: Setup
+('127.0.0.1', 44186), 2004-01-01 06:39:35,592: [{"args": [""], "cmd": "get_state", "dev": "sw-before-pump"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,597: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-before-pump"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,628: [{"args": [""], "cmd": "get_state", "dev": "sw-before-inlet"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,633: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-before-inlet"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,646: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-1-in"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,650: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-1-in"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,660: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-1-by"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,663: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-1-by"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,674: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-2-in"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,678: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-2-in"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,688: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-2-by"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,691: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-2-by"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,701: [{"args": [""], "cmd": "get_state", "dev": "sw-h2-1-in"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,705: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-h2-1-in"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,716: [{"args": [""], "cmd": "get_state", "dev": "sw-h2-1-by"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,720: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-h2-1-by"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,731: [{"args": [""], "cmd": "get_state", "dev": "sw-n2-1-by"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,735: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-n2-1-by"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,744: [{"args": [""], "cmd": "get_state", "dev": "sw-ventline"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,747: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ventline"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,761: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,762: [{"status": "OK", "cmd": "get_fs_range", "value": ["2000.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,831: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-ch4-2"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,832: [{"status": "OK", "cmd": "get_fs_range", "value": ["10.0"], "dev": "mfc-ch4-2"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,865: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-h2-1"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,866: [{"status": "OK", "cmd": "get_fs_range", "value": ["2000.0"], "dev": "mfc-h2-1"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,875: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-n2-1"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:35,876: [{"status": 0, "cmd": "get_fs_range", "value": ["0.0"], "dev": "mfc-n2-1"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:35,905: [{"args": ["A"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:36,120: [{"status": "OK", "cmd": "get_setp_state", "value": ["A", ["Position", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:36,135: [{"args": ["B"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:36,348: [{"status": "OK", "cmd": "get_setp_state", "value": ["B", ["Pressure", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:36,361: [{"args": ["C"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:36,573: [{"status": "OK", "cmd": "get_setp_state", "value": ["C", ["Position", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:36,586: [{"args": ["D"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:36,800: [{"status": "OK", "cmd": "get_setp_state", "value": ["D", ["Position", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:36,817: [{"args": ["E"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:37,031: [{"status": "OK", "cmd": "get_setp_state", "value": ["E", ["Position", 0.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:37,042: [{"args": ["A"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:37,191: [{"status": "OK", "cmd": "get_setp_params", "value": ["A", [9000.0, 40.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:37,203: [{"args": ["B"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:37,352: [{"status": "OK", "cmd": "get_setp_params", "value": ["B", [5000.0, 40.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:37,364: [{"args": ["C"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:37,513: [{"status": "OK", "cmd": "get_setp_params", "value": ["C", [2000.0, 20.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:37,527: [{"args": ["D"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:37,674: [{"status": "OK", "cmd": "get_setp_params", "value": ["D", [50.0, 10.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:37,686: [{"args": ["E"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:37,835: [{"status": "OK", "cmd": "get_setp_params", "value": ["E", [50.0, 10.0]], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:38,869: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:39,019: [{"status": "OK", "cmd": "get_flow", "value": ["-34.889"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-80.439"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.71690,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:39,853: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:39,997: [{"status": "OK", "cmd": "get_flow", "value": ["-35.015"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2724.728"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65130,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:40,854: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:41,000: [{"status": "OK", "cmd": "get_flow", "value": ["-30.221"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2748.329"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69760,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:41,853: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:41,997: [{"status": "OK", "cmd": "get_flow", "value": ["-34.006"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2740.504"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66410,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:42,853: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:42,999: [{"status": "OK", "cmd": "get_flow", "value": ["-29.464"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2744.164"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67680,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:43,853: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:43,999: [{"status": "OK", "cmd": "get_flow", "value": ["-32.492"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2715.894"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.70020,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:44,853: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:44,999: [{"status": "OK", "cmd": "get_flow", "value": ["-27.318"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2711.603"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64770,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:45,855: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:45,999: [{"status": "OK", "cmd": "get_flow", "value": ["-24.669"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2643.073"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65820,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:46,854: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:47,000: [{"status": "OK", "cmd": "get_flow", "value": ["-30.094"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2607.104"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69120,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:47,854: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:47,998: [{"status": "OK", "cmd": "get_flow", "value": ["-33.501"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.049"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2608.997"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.61430,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:48,855: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:49,001: [{"status": "OK", "cmd": "get_flow", "value": ["-34.384"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.049"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2581.232"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68890,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:49,853: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:49,997: [{"status": "OK", "cmd": "get_flow", "value": ["-34.006"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2594.357"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66260,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:50,198: [{"args": ["10"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:50,202: [{"status": "OK", "cmd": "set_flow", "value": ["10.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:50,867: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:51,012: [{"status": "OK", "cmd": "get_flow", "value": ["-19.748"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.049"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2676.013"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66250,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:51,866: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:52,011: [{"status": "OK", "cmd": "get_flow", "value": ["-32.239"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.049"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2671.091"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65960,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:52,866: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:53,012: [{"status": "OK", "cmd": "get_flow", "value": ["-32.366"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2665.790"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66150,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:53,867: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:54,011: [{"status": "OK", "cmd": "get_flow", "value": ["-27.445"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2606.599"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67820,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:54,867: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:55,012: [{"status": "OK", "cmd": "get_flow", "value": ["-33.754"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2587.668"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72200,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:55,867: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:56,011: [{"status": "OK", "cmd": "get_flow", "value": ["-35.394"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2568.864"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.60970,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:56,867: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:57,013: [{"status": "OK", "cmd": "get_flow", "value": ["-32.492"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2572.524"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64030,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:57,867: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:58,011: [{"status": "OK", "cmd": "get_flow", "value": ["-32.492"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2574.669"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66380,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:58,322: [{"args": ["0"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:58,326: [{"status": "OK", "cmd": "set_flow", "value": ["0.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:58,881: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:39:59,025: [{"status": "OK", "cmd": "get_flow", "value": ["-28.328"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2602.939"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.59540,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:39:59,879: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:00,023: [{"status": "OK", "cmd": "get_flow", "value": ["-30.599"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2623.132"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65400,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:00,880: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:01,024: [{"status": "OK", "cmd": "get_flow", "value": ["-28.833"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2582.620"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64970,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:01,880: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:02,024: [{"status": "OK", "cmd": "get_flow", "value": ["-36.025"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2570.757"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64670,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:02,880: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:03,024: [{"status": "OK", "cmd": "get_flow", "value": ["-29.211"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2566.466"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67890,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:03,314: [{"args": ["25"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:03,318: [{"status": "OK", "cmd": "set_flow", "value": ["25.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:03,893: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:04,038: [{"status": "OK", "cmd": "get_flow", "value": ["-31.482"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2671.343"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65550,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:04,892: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:05,037: [{"status": "OK", "cmd": "get_flow", "value": ["-30.978"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2632.472"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64730,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:05,893: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:06,038: [{"status": "OK", "cmd": "get_flow", "value": ["-32.618"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2605.085"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67510,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:06,892: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:07,039: [{"status": "OK", "cmd": "get_flow", "value": ["-31.482"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2568.611"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65820,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:07,893: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:08,039: [{"status": "OK", "cmd": "get_flow", "value": ["-31.104"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2565.835"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67010,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:08,893: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:09,037: [{"status": "OK", "cmd": "get_flow", "value": ["-74.888"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2573.407"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.63800,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:09,893: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:10,040: [{"status": "OK", "cmd": "get_flow", "value": ["-29.590"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2583.125"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64010,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:10,893: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:11,037: [{"status": "OK", "cmd": "get_flow", "value": ["-32.239"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2603.318"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67330,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:11,892: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:12,038: [{"status": "OK", "cmd": "get_flow", "value": ["-29.211"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2601.425"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67210,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:12,893: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:13,038: [{"status": "OK", "cmd": "get_flow", "value": ["-27.571"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2623.889"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67680,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:13,892: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:14,038: [{"status": "OK", "cmd": "get_flow", "value": ["-20.126"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2647.869"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67350,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:14,517: [{"args": ["flow"], "cmd": "set_state", "dev": "sw-h2-1-by"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:14,521: [{"status": "OK", "cmd": "set_state", "value": ["flow"], "dev": "sw-h2-1-by"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:14,907: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:15,055: [{"status": "OK", "cmd": "get_flow", "value": ["-36.151"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2566.592"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64230,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:15,907: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:16,051: [{"status": "OK", "cmd": "get_flow", "value": ["-35.015"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2565.077"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66580,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:16,906: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:17,052: [{"status": "OK", "cmd": "get_flow", "value": ["-30.221"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2575.679"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.62290,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:17,907: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:18,052: [{"status": "OK", "cmd": "get_flow", "value": ["-26.057"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2585.018"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67300,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:18,907: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:19,055: [{"status": "OK", "cmd": "get_flow", "value": ["-28.706"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2586.406"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65500,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:19,907: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:20,051: [{"status": "OK", "cmd": "get_flow", "value": ["-69.336"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2619.094"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64760,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:20,051: [{"args": ["25"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:20,055: [{"status": "OK", "cmd": "set_flow", "value": ["25.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:21,272: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:21,418: [{"status": "OK", "cmd": "get_flow", "value": ["-27.318"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2738.737"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68080,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:22,271: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:22,416: [{"status": "OK", "cmd": "get_flow", "value": ["-32.239"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.049"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2746.183"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66560,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:23,271: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:23,418: [{"status": "OK", "cmd": "get_flow", "value": ["-27.445"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.049"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2744.795"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.62430,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:24,211: [{"args": ["0"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:24,215: [{"status": "OK", "cmd": "set_flow", "value": ["0.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:24,285: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:24,430: [{"status": "OK", "cmd": "get_flow", "value": ["-33.880"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.049"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2662.256"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67990,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:25,287: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:25,433: [{"status": "OK", "cmd": "get_flow", "value": ["-32.870"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.049"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2741.514"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.62720,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:25,911: [{"args": ["noflow"], "cmd": "set_state", "dev": "sw-h2-1-by"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:25,915: [{"status": "OK", "cmd": "set_state", "value": ["noflow"], "dev": "sw-h2-1-by"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:26,301: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:26,445: [{"status": "OK", "cmd": "get_flow", "value": ["-35.520"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2580.222"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.70270,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:27,302: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:27,448: [{"status": "OK", "cmd": "get_flow", "value": ["-33.123"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2648.626"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.70500,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:28,301: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:28,445: [{"status": "OK", "cmd": "get_flow", "value": ["-83.089"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2629.569"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67050,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:29,300: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:29,448: [{"status": "OK", "cmd": "get_flow", "value": ["-30.725"], "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"cmd": "get_flow", "dev": "mfc-h2-1"}, {"cmd": "get_flow", "dev": "mfc-n2-1"}, {"cmd": "get_pressure_position", "dev": "tvc"}, {"status": "Error", "error": "KeyError(u'mfc-ch4-2',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:30,302: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:30,446: [{"status": "OK", "cmd": "get_flow", "value": ["-26.940"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2690.274"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.61310,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:31,303: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:31,449: [{"status": "OK", "cmd": "get_flow", "value": ["-25.552"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2749.212"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.74140,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:32,302: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:32,446: [{"status": "OK", "cmd": "get_flow", "value": ["-31.482"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2695.196"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.63210,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:33,300: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:33,445: [{"status": "OK", "cmd": "get_flow", "value": ["-28.580"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2674.120"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66890,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:34,300: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:34,445: [{"status": "OK", "cmd": "get_flow", "value": ["-66.055"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2687.624"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68050,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:35,301: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:35,448: [{"status": "OK", "cmd": "get_flow", "value": ["-31.987"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2725.864"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67670,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:36,300: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:36,444: [{"status": "OK", "cmd": "get_flow", "value": ["-34.889"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2716.272"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69160,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:37,300: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:37,444: [{"status": "OK", "cmd": "get_flow", "value": ["-27.192"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2734.825"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.63320,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:38,301: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:38,445: [{"status": "OK", "cmd": "get_flow", "value": ["-36.529"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2744.795"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67960,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:39,300: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:39,446: [{"status": "OK", "cmd": "get_flow", "value": ["-29.842"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2740.630"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.62960,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:40,301: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:40,445: [{"status": "OK", "cmd": "get_flow", "value": ["-32.239"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.049"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2744.038"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66180,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:41,303: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44186), 2004-01-01 06:40:41,455: [{"status": "OK", "cmd": "get_flow", "value": ["-30.725"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2705.924"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.63800,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:44,417: 
+('127.0.0.1', 44186), 2004-01-01 06:40:44,418: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:44,419: 
+('127.0.0.1', 44186), 2004-01-01 06:40:44,419: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44186), 2004-01-01 06:40:44,420: Finish
+('127.0.0.1', 44201), 2004-01-01 06:53:38,303: Started talking to 127.0.0.1:44201 on Thread-1
+('127.0.0.1', 44201), 2004-01-01 06:53:38,304: Setup
+('127.0.0.1', 44201), 2004-01-01 06:54:14,215: [{"args": [""], "cmd": "get_state", "dev": "sw-before-pump"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,219: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-before-pump"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,237: [{"args": [""], "cmd": "get_state", "dev": "sw-before-inlet"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,249: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-before-inlet"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,269: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-1-in"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,273: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-1-in"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,288: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-1-by"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,292: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-1-by"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,305: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-2-in"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,309: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-2-in"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,322: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-2-by"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,326: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-2-by"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,340: [{"args": [""], "cmd": "get_state", "dev": "sw-h2-1-in"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,344: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-h2-1-in"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,359: [{"args": [""], "cmd": "get_state", "dev": "sw-h2-1-by"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,363: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-h2-1-by"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,378: [{"args": [""], "cmd": "get_state", "dev": "sw-n2-1-by"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,382: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-n2-1-by"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,487: [{"args": [""], "cmd": "get_state", "dev": "sw-ventline"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,491: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ventline"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,526: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,527: [{"status": "OK", "cmd": "get_fs_range", "value": ["2000.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,543: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-ch4-2"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,544: [{"status": "OK", "cmd": "get_fs_range", "value": ["10.0"], "dev": "mfc-ch4-2"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,572: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-h2-1"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,573: [{"status": "OK", "cmd": "get_fs_range", "value": ["2000.0"], "dev": "mfc-h2-1"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,597: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-n2-1"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,605: [{"status": 0, "cmd": "get_fs_range", "value": ["0.0"], "dev": "mfc-n2-1"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,638: [{"args": ["A"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:14,852: [{"status": "OK", "cmd": "get_setp_state", "value": ["A", ["Position", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:14,868: [{"args": ["B"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:15,082: [{"status": "OK", "cmd": "get_setp_state", "value": ["B", ["Pressure", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:15,105: [{"args": ["C"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:15,319: [{"status": "OK", "cmd": "get_setp_state", "value": ["C", ["Position", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:15,332: [{"args": ["D"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:15,545: [{"status": "OK", "cmd": "get_setp_state", "value": ["D", ["Position", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:15,556: [{"args": ["E"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:15,767: [{"status": "OK", "cmd": "get_setp_state", "value": ["E", ["Position", 0.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:15,782: [{"args": ["A"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:15,931: [{"status": "OK", "cmd": "get_setp_params", "value": ["A", [9000.0, 40.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:15,943: [{"args": ["B"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:16,093: [{"status": "OK", "cmd": "get_setp_params", "value": ["B", [5000.0, 40.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:16,118: [{"args": ["C"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:16,268: [{"status": "OK", "cmd": "get_setp_params", "value": ["C", [2000.0, 20.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:16,279: [{"args": ["D"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:16,426: [{"status": "OK", "cmd": "get_setp_params", "value": ["D", [50.0, 10.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:16,436: [{"args": ["E"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:16,585: [{"status": "OK", "cmd": "get_setp_params", "value": ["E", [50.0, 10.0]], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:17,639: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:17,789: [{"status": "OK", "cmd": "get_flow", "value": ["-29.085"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["37.419"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.75290,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:18,636: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:18,781: [{"status": "OK", "cmd": "get_flow", "value": ["-76.780"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2636.636"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69120,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:19,636: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:19,780: [{"status": "OK", "cmd": "get_flow", "value": ["-55.961"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2601.172"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68050,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:20,635: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:20,781: [{"status": "OK", "cmd": "get_flow", "value": ["-35.520"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2587.416"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64960,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:21,635: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:21,780: [{"status": "OK", "cmd": "get_flow", "value": ["-34.258"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2576.436"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69010,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:21,782: [{"args": ["25"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:21,788: [{"status": "OK", "cmd": "set_flow", "value": ["25.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:22,918: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:23,062: [{"status": "OK", "cmd": "get_flow", "value": ["-37.917"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2616.822"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68680,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:23,916: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:24,061: [{"status": "OK", "cmd": "get_flow", "value": ["-32.744"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2611.269"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65410,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:24,918: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:25,061: [{"status": "OK", "cmd": "get_flow", "value": ["-29.211"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2669.829"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.62020,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:25,918: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:26,062: [{"status": "OK", "cmd": "get_flow", "value": ["-27.697"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2733.941"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69490,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:26,063: [{"args": ["0"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:26,069: [{"status": "OK", "cmd": "set_flow", "value": ["0.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:27,142: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:27,287: [{"status": "OK", "cmd": "get_flow", "value": ["-32.744"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2660.994"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68050,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:28,143: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:28,287: [{"status": "OK", "cmd": "get_flow", "value": ["-21.640"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2596.250"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64770,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:29,140: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:29,287: [{"status": "OK", "cmd": "get_flow", "value": ["-30.094"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2604.201"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68510,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:30,141: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:30,284: [{"status": "OK", "cmd": "get_flow", "value": ["-31.356"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2588.173"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.70030,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:31,142: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:31,287: [{"status": "OK", "cmd": "get_flow", "value": ["-26.435"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2565.582"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68340,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:32,142: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:32,286: [{"status": "OK", "cmd": "get_flow", "value": ["-28.706"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2571.640"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68070,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:33,142: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:33,288: [{"status": "OK", "cmd": "get_flow", "value": ["-27.571"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2621.870"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68240,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:34,150: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:34,294: [{"status": "OK", "cmd": "get_flow", "value": ["-28.202"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2702.768"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.74280,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:35,140: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:35,286: [{"status": "OK", "cmd": "get_flow", "value": ["-35.394"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2652.160"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68130,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:36,140: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44201), 2004-01-01 06:54:36,285: [{"status": "OK", "cmd": "get_flow", "value": ["-36.782"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2704.283"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65950,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:37,990: 
+('127.0.0.1', 44201), 2004-01-01 06:54:37,991: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:37,991: 
+('127.0.0.1', 44201), 2004-01-01 06:54:37,992: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44201), 2004-01-01 06:54:37,992: Finish
+('127.0.0.1', 44208), 2004-01-01 06:54:38,053: Started talking to 127.0.0.1:44208 on Thread-123
+('127.0.0.1', 44208), 2004-01-01 06:54:38,053: Setup
+('127.0.0.1', 44208), 2004-01-01 06:54:38,334: 
+('127.0.0.1', 44208), 2004-01-01 06:54:38,334: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44208), 2004-01-01 06:54:38,335: 
+('127.0.0.1', 44208), 2004-01-01 06:54:38,335: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44208), 2004-01-01 06:54:38,335: Finish
+('127.0.0.1', 44219), 2004-01-01 06:58:29,216: Started talking to 127.0.0.1:44219 on Thread-1
+('127.0.0.1', 44219), 2004-01-01 06:58:29,217: Setup
+('127.0.0.1', 44219), 2004-01-01 06:58:36,335: [{"args": [""], "cmd": "get_state", "dev": "sw-before-pump"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,339: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-before-pump"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,359: [{"args": [""], "cmd": "get_state", "dev": "sw-before-inlet"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,371: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-before-inlet"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,386: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-1-in"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,390: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-1-in"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,404: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-1-by"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,409: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-1-by"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,422: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-2-in"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,426: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-2-in"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,436: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-2-by"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,441: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-2-by"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,454: [{"args": [""], "cmd": "get_state", "dev": "sw-h2-1-in"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,458: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-h2-1-in"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,473: [{"args": [""], "cmd": "get_state", "dev": "sw-h2-1-by"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,477: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-h2-1-by"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,491: [{"args": [""], "cmd": "get_state", "dev": "sw-n2-1-by"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,495: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-n2-1-by"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,508: [{"args": [""], "cmd": "get_state", "dev": "sw-ventline"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,512: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ventline"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,619: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,620: [{"status": "OK", "cmd": "get_fs_range", "value": ["2000.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,636: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-ch4-2"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,637: [{"status": "OK", "cmd": "get_fs_range", "value": ["10.0"], "dev": "mfc-ch4-2"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:36,664: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-h2-1"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:36,664: [{"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_fs_range\", \"dev\": \"mfc-h2-1\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:37,744: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:37,745: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:38,735: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:38,736: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:39,738: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:39,738: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:40,737: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:40,738: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:41,736: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:41,736: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:42,735: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:42,736: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:43,736: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:43,736: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:44,737: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:44,738: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:45,737: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:45,738: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:46,736: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:46,737: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:47,735: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:47,736: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:48,735: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:48,736: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:49,736: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44219), 2004-01-01 06:58:49,737: [{"cmd": "get_flow", "dev": "mfc-h2-2"}, {"cmd": "get_flow", "dev": "mfc-ch4-2"}, {"status": "Error", "error": "KeyError(u'mfc-h2-1',)[{\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-ch4-2\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-h2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_flow\", \"dev\": \"mfc-n2-1\"}, {\"args\": [\"\"], \"cmd\": \"get_pressure_position\", \"dev\": \"tvc\"}]\n"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:56,888: 
+('127.0.0.1', 44219), 2004-01-01 06:58:56,889: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:56,890: 
+('127.0.0.1', 44219), 2004-01-01 06:58:56,890: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44219), 2004-01-01 06:58:56,891: Finish
+('127.0.0.1', 44225), 2004-01-01 06:58:56,955: Started talking to 127.0.0.1:44225 on Thread-40
+('127.0.0.1', 44225), 2004-01-01 06:58:56,955: Setup
+('127.0.0.1', 44225), 2004-01-01 06:58:57,257: 
+('127.0.0.1', 44225), 2004-01-01 06:58:57,258: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44225), 2004-01-01 06:58:57,258: 
+('127.0.0.1', 44225), 2004-01-01 06:58:57,258: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44225), 2004-01-01 06:58:57,259: Finish
+('127.0.0.1', 44226), 2004-01-01 06:59:39,342: Started talking to 127.0.0.1:44226 on Thread-1
+('127.0.0.1', 44226), 2004-01-01 06:59:39,342: Setup
+('127.0.0.1', 44226), 2004-01-01 06:59:47,892: [{"args": [""], "cmd": "get_state", "dev": "sw-before-pump"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:47,897: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-before-pump"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:47,918: [{"args": [""], "cmd": "get_state", "dev": "sw-before-inlet"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:47,923: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-before-inlet"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:47,940: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-1-in"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:47,944: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-1-in"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:47,960: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-1-by"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:47,964: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-1-by"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:47,977: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-2-in"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:47,982: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-2-in"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:47,995: [{"args": [""], "cmd": "get_state", "dev": "sw-ch4-2-by"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:47,999: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ch4-2-by"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,011: [{"args": [""], "cmd": "get_state", "dev": "sw-h2-1-in"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,017: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-h2-1-in"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,032: [{"args": [""], "cmd": "get_state", "dev": "sw-h2-1-by"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,036: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-h2-1-by"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,048: [{"args": [""], "cmd": "get_state", "dev": "sw-n2-1-by"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,053: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-n2-1-by"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,067: [{"args": [""], "cmd": "get_state", "dev": "sw-ventline"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,071: [{"status": "OK", "cmd": "get_state", "value": ["noflow"], "dev": "sw-ventline"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,184: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,185: [{"status": "OK", "cmd": "get_fs_range", "value": ["2000.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,203: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-ch4-2"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,204: [{"status": "OK", "cmd": "get_fs_range", "value": ["10.0"], "dev": "mfc-ch4-2"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,228: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-h2-1"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,229: [{"status": "OK", "cmd": "get_fs_range", "value": ["2000.0"], "dev": "mfc-h2-1"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,257: [{"args": [""], "cmd": "get_fs_range", "dev": "mfc-n2-1"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,258: [{"status": 0, "cmd": "get_fs_range", "value": ["0.0"], "dev": "mfc-n2-1"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,270: [{"args": ["A"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,493: [{"status": "OK", "cmd": "get_setp_state", "value": ["A", ["Position", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,506: [{"args": ["B"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,719: [{"status": "OK", "cmd": "get_setp_state", "value": ["B", ["Pressure", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,731: [{"args": ["C"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:48,945: [{"status": "OK", "cmd": "get_setp_state", "value": ["C", ["Position", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:48,957: [{"args": ["D"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:49,171: [{"status": "OK", "cmd": "get_setp_state", "value": ["D", ["Position", 100.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:49,182: [{"args": ["E"], "cmd": "get_setp_state", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:49,394: [{"status": "OK", "cmd": "get_setp_state", "value": ["E", ["Position", 0.0, 100.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:49,404: [{"args": ["A"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:49,554: [{"status": "OK", "cmd": "get_setp_params", "value": ["A", [9000.0, 40.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:49,564: [{"args": ["B"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:49,714: [{"status": "OK", "cmd": "get_setp_params", "value": ["B", [5000.0, 40.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:49,725: [{"args": ["C"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:49,875: [{"status": "OK", "cmd": "get_setp_params", "value": ["C", [2000.0, 20.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:49,887: [{"args": ["D"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:50,034: [{"status": "OK", "cmd": "get_setp_params", "value": ["D", [50.0, 10.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:50,044: [{"args": ["E"], "cmd": "get_setp_params", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:50,193: [{"status": "OK", "cmd": "get_setp_params", "value": ["E", [50.0, 10.0]], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:51,224: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:51,368: [{"status": "OK", "cmd": "get_flow", "value": ["-35.772"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["67.709"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69060,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:52,224: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:52,370: [{"status": "OK", "cmd": "get_flow", "value": ["-28.706"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2736.970"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72480,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:53,224: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:53,368: [{"status": "OK", "cmd": "get_flow", "value": ["-27.192"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2712.486"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69150,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:54,224: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:54,370: [{"status": "OK", "cmd": "get_flow", "value": ["-30.978"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2745.047"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68820,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:55,224: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:55,368: [{"status": "OK", "cmd": "get_flow", "value": ["-30.094"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2750.474"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72330,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:56,223: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:56,370: [{"status": "OK", "cmd": "get_flow", "value": ["-26.940"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2742.523"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65780,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:57,226: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:57,371: [{"status": "OK", "cmd": "get_flow", "value": ["-33.754"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2671.595"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64820,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:58,225: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:58,371: [{"status": "OK", "cmd": "get_flow", "value": ["-29.716"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2704.661"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.65220,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 06:59:59,225: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 06:59:59,370: [{"status": "OK", "cmd": "get_flow", "value": ["-31.987"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2666.295"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67850,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:00,226: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:00,372: [{"status": "OK", "cmd": "get_flow", "value": ["-32.870"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2640.801"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68780,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:00,680: [{"args": ["25"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:00,684: [{"status": "OK", "cmd": "set_flow", "value": ["25.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:01,234: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:01,377: [{"status": "OK", "cmd": "get_flow", "value": ["-29.968"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2600.668"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69000,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:02,233: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:02,378: [{"status": "OK", "cmd": "get_flow", "value": ["-25.804"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2619.851"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69040,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:03,234: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:03,377: [{"status": "OK", "cmd": "get_flow", "value": ["-30.094"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2642.820"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67380,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:04,010: [{"args": ["10"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:04,014: [{"status": "OK", "cmd": "set_flow", "value": ["10.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:04,247: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:04,392: [{"status": "OK", "cmd": "get_flow", "value": ["-7.256"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2596.881"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69330,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:05,250: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:05,394: [{"status": "OK", "cmd": "get_flow", "value": ["-28.833"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2577.067"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67700,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:06,247: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:06,392: [{"status": "OK", "cmd": "get_flow", "value": ["-32.492"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2571.388"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67770,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:07,248: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:07,391: [{"status": "OK", "cmd": "get_flow", "value": ["-31.987"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2566.970"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69050,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:08,248: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:08,393: [{"status": "OK", "cmd": "get_flow", "value": ["-32.239"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2587.290"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72430,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:09,247: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:09,391: [{"status": "OK", "cmd": "get_flow", "value": ["-31.987"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2573.912"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.67450,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:10,247: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:10,393: [{"status": "OK", "cmd": "get_flow", "value": ["-32.744"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2560.660"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.63000,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:11,247: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:11,391: [{"status": "OK", "cmd": "get_flow", "value": ["-30.473"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2574.543"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68060,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:12,247: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:12,393: [{"status": "OK", "cmd": "get_flow", "value": ["-31.104"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2586.785"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64360,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:13,027: [{"args": ["20"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:13,031: [{"status": "OK", "cmd": "set_flow", "value": ["20.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:13,262: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:13,408: [{"status": "OK", "cmd": "get_flow", "value": ["-31.482"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2590.445"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.71220,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:14,267: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:14,415: [{"status": "OK", "cmd": "get_flow", "value": ["-29.842"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2604.580"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72500,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:15,263: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:15,409: [{"status": "OK", "cmd": "get_flow", "value": ["-35.394"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2572.019"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.70500,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:16,263: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:16,407: [{"status": "OK", "cmd": "get_flow", "value": ["-30.978"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2570.504"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69000,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:17,263: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:17,409: [{"status": "OK", "cmd": "get_flow", "value": ["-35.394"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2562.427"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69100,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:18,263: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:18,408: [{"status": "OK", "cmd": "get_flow", "value": ["-34.258"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2559.651"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69400,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:19,263: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:19,410: [{"status": "OK", "cmd": "get_flow", "value": ["-32.366"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2578.708"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.63580,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:20,262: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:20,406: [{"status": "OK", "cmd": "get_flow", "value": ["-31.104"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2573.155"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68240,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:21,262: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:21,407: [{"status": "OK", "cmd": "get_flow", "value": ["-33.123"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2576.562"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68540,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:22,263: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:22,407: [{"status": "OK", "cmd": "get_flow", "value": ["-31.609"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2583.377"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69400,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:23,263: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:23,408: [{"status": "OK", "cmd": "get_flow", "value": ["-31.356"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2593.095"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72200,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:24,262: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:24,407: [{"status": "OK", "cmd": "get_flow", "value": ["-33.754"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2603.192"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.75230,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:25,261: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:25,404: [{"status": "OK", "cmd": "get_flow", "value": ["-45.867"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2577.193"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.81410,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:26,263: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:26,407: [{"status": "OK", "cmd": "get_flow", "value": ["-30.221"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2627.802"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.66300,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:27,264: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:27,411: [{"status": "OK", "cmd": "get_flow", "value": ["-35.772"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2728.136"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.75660,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:28,262: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:28,407: [{"status": "OK", "cmd": "get_flow", "value": ["-57.854"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2672.605"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.70330,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:29,262: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:29,406: [{"status": "OK", "cmd": "get_flow", "value": ["-35.899"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2636.636"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72870,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:30,262: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:30,407: [{"status": "OK", "cmd": "get_flow", "value": ["-31.861"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2640.927"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72200,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:31,262: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:31,406: [{"status": "OK", "cmd": "get_flow", "value": ["-29.337"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2679.925"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.70590,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:31,652: [{"args": ["25"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:31,656: [{"status": "OK", "cmd": "set_flow", "value": ["25.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:32,298: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:32,443: [{"status": "OK", "cmd": "get_flow", "value": ["-31.987"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2588.426"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.73060,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:33,296: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:33,445: [{"status": "OK", "cmd": "get_flow", "value": ["-31.356"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2578.077"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.73480,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:34,298: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:34,441: [{"status": "OK", "cmd": "get_flow", "value": ["-32.239"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2585.397"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69730,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:35,297: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:35,443: [{"status": "OK", "cmd": "get_flow", "value": ["-31.861"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2569.242"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68470,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:36,296: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:36,440: [{"status": "OK", "cmd": "get_flow", "value": ["-34.889"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2575.048"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.76340,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:36,722: [{"args": ["flow"], "cmd": "set_state", "dev": "sw-h2-1-by"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:36,726: [{"status": "OK", "cmd": "set_state", "value": ["flow"], "dev": "sw-h2-1-by"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:37,332: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:37,477: [{"status": "OK", "cmd": "get_flow", "value": ["-31.861"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2564.825"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.70370,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:38,331: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:38,477: [{"status": "OK", "cmd": "get_flow", "value": ["-35.268"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2603.192"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.77770,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:39,332: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:39,483: [{"status": "OK", "cmd": "get_flow", "value": ["-31.104"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2589.814"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.74810,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:40,332: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:40,478: [{"status": "OK", "cmd": "get_flow", "value": ["-31.861"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2570.630"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.75430,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:40,723: [{"args": ["40"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:40,727: [{"status": "OK", "cmd": "set_flow", "value": ["40.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:41,345: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:41,491: [{"status": "OK", "cmd": "get_flow", "value": ["-29.716"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2732.048"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.73910,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:42,346: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:42,489: [{"status": "OK", "cmd": "get_flow", "value": ["-28.580"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2694.439"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.76500,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:43,346: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:43,491: [{"status": "OK", "cmd": "get_flow", "value": ["-28.959"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2695.701"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.73740,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:44,346: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:44,491: [{"status": "OK", "cmd": "get_flow", "value": ["-37.413"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2690.022"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.70810,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:45,345: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:45,491: [{"status": "OK", "cmd": "get_flow", "value": ["-32.239"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2704.914"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.74010,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:45,726: [{"args": ["0"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:45,730: [{"status": "OK", "cmd": "set_flow", "value": ["0.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:46,403: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:46,550: [{"status": "OK", "cmd": "get_flow", "value": ["-32.618"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2738.485"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.69320,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:47,412: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:47,557: [{"status": "OK", "cmd": "get_flow", "value": ["-26.057"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2555.233"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.80280,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:48,403: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:48,550: [{"status": "OK", "cmd": "get_flow", "value": ["-25.426"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2728.262"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72360,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:49,403: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:49,550: [{"status": "OK", "cmd": "get_flow", "value": ["-30.599"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2718.670"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.78230,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:50,402: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:50,547: [{"status": "OK", "cmd": "get_flow", "value": ["-27.949"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2731.165"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.73980,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:51,403: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:51,550: [{"status": "OK", "cmd": "get_flow", "value": ["-30.599"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2701.254"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.73230,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:52,403: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:52,548: [{"status": "OK", "cmd": "get_flow", "value": ["-29.590"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2693.051"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.72050,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:53,403: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:53,547: [{"status": "OK", "cmd": "get_flow", "value": ["-31.735"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2668.062"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.76170,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:54,403: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:54,548: [{"status": "OK", "cmd": "get_flow", "value": ["-36.151"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2675.508"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.71440,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:55,410: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:55,556: [{"status": "OK", "cmd": "get_flow", "value": ["-40.441"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2566.718"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.75710,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:56,086: [{"args": ["noflow"], "cmd": "set_state", "dev": "sw-h2-1-by"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:56,090: [{"status": "OK", "cmd": "set_state", "value": ["noflow"], "dev": "sw-h2-1-by"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:56,416: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:56,562: [{"status": "OK", "cmd": "get_flow", "value": ["-23.786"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.048"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2734.699"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.76490,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:57,415: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:57,561: [{"status": "OK", "cmd": "get_flow", "value": ["-26.814"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2702.011"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.71470,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:58,415: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:58,561: [{"status": "OK", "cmd": "get_flow", "value": ["-32.744"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2706.681"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.75120,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:58,859: [{"args": ["0"], "cmd": "set_flow", "dev": "mfc-h2-2"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:58,863: [{"status": "OK", "cmd": "set_flow", "value": ["0.0"], "dev": "mfc-h2-2"}]
+('127.0.0.1', 44226), 2004-01-01 07:00:59,428: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:00:59,572: [{"status": "OK", "cmd": "get_flow", "value": ["-34.637"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2570.378"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.64300,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:01:00,428: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:01:00,572: [{"status": "OK", "cmd": "get_flow", "value": ["-32.239"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2566.970"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.76690,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:01:01,428: [{"args": [""], "cmd": "get_flow", "dev": "mfc-h2-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-ch4-2"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-h2-1"}, {"args": [""], "cmd": "get_flow", "dev": "mfc-n2-1"}, {"args": [""], "cmd": "get_pressure_position", "dev": "tvc"}]
+
+('127.0.0.1', 44226), 2004-01-01 07:01:01,572: [{"status": "OK", "cmd": "get_flow", "value": ["-33.123"], "dev": "mfc-h2-2"}, {"status": "OK", "cmd": "get_flow", "value": ["-0.047"], "dev": "mfc-ch4-2"}, {"status": "OK", "cmd": "get_flow", "value": ["2562.553"], "dev": "mfc-h2-1"}, {"status": 0, "cmd": "get_flow", "value": ["0.000"], "dev": "mfc-n2-1"}, {"status": "OK", "cmd": "get_pressure_position", "value": ["675.68690,0.0000"], "dev": "tvc"}]
+('127.0.0.1', 44226), 2004-01-01 07:01:16,603: 
+('127.0.0.1', 44226), 2004-01-01 07:01:16,604: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44226), 2004-01-01 07:01:16,605: 
+('127.0.0.1', 44226), 2004-01-01 07:01:16,605: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44226), 2004-01-01 07:01:16,606: Finish
+('127.0.0.1', 44309), 2004-01-01 07:32:18,080: Started talking to 127.0.0.1:44309 on Thread-1
+('127.0.0.1', 44309), 2004-01-01 07:32:18,081: Setup
+('127.0.0.1', 44309), 2004-01-01 07:32:44,547: 
+('127.0.0.1', 44309), 2004-01-01 07:32:44,548: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44309), 2004-01-01 07:32:44,549: 
+('127.0.0.1', 44309), 2004-01-01 07:32:44,550: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44309), 2004-01-01 07:32:44,550: Finish
+('127.0.0.1', 44314), 2004-01-01 07:32:44,610: Started talking to 127.0.0.1:44314 on Thread-2
+('127.0.0.1', 44314), 2004-01-01 07:32:44,610: Setup
+('127.0.0.1', 44314), 2004-01-01 07:32:44,887: 
+('127.0.0.1', 44314), 2004-01-01 07:32:44,887: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44314), 2004-01-01 07:32:44,888: 
+('127.0.0.1', 44314), 2004-01-01 07:32:44,888: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44314), 2004-01-01 07:32:44,889: Finish
+('127.0.0.1', 44315), 2004-01-01 07:35:36,371: Started talking to 127.0.0.1:44315 on Thread-1
+('127.0.0.1', 44315), 2004-01-01 07:35:36,372: Setup
+('127.0.0.1', 44315), 2004-01-01 07:35:56,202: 
+('127.0.0.1', 44315), 2004-01-01 07:35:56,203: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44315), 2004-01-01 07:35:56,203: 
+('127.0.0.1', 44315), 2004-01-01 07:35:56,204: [{"status": "Error", "error": "ValueError('No JSON object could be decoded',)"}]
+('127.0.0.1', 44315), 2004-01-01 07:35:56,204: Finish

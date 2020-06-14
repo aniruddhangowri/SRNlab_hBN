@@ -1,0 +1,3 @@
+0 tvc close
+1293 tvc open
+3881 tvc close

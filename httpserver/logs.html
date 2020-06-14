@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/static/css/style.css" rel="stylesheet">
+<script src="/static/js/json2.js"></script>
+<script src="/static/js/flot/jquery.js"></script>
+<script src="/static/js/flot/jquery.flot.js"></script>
+<script type="text/javascript" src="/static/js/flot/jquery.flot.time.js"></script>   
+<script type="text/javascript" src="/static/js/flot/jquery.flot.stack.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    var err_func = function(resp, tstatus, jqXHR) { console.log(resp); console.log(tstatus); console.log(jqXHR); };
+
+    var switches = ['sw-before-pump', 'sw-before-inlet', 'sw-ch4-1-in', 'sw-ch4-1-by',
+        'sw-ch4-2-in', 'sw-ch4-2-by', 'sw-h2-1-in', 'sw-h2-1-by', 'sw-n2-1-by', 'sw-ventline']
+            
+    var plot_options = {
+        series: { lines: {show: true, lineWidth: 1.0, fill: true}, trendline: { show:true, lineWidth:0.8, fill:true }},
+        points:{ show: true, radius:1.0, lineWidth: 1.0}, 
+        xaxes: [{mode: "time", tickSize: [60, "second"]}],
+    };
+
+    var plot_options_tvc = {
+        series: { lines: {show: true, lineWidth: 1.0, fill: true}, trendline: { show:true, lineWidth:0.8, fill:true }},
+        points:{ show: true, radius:1.0, lineWidth: 1.0}, 
+        xaxes: [{mode: "time", tickSize: [60, "second"]}],
+        yaxes: [ { min: 0 }, {position: "right"}],
+    };
+    var upd_data_set = { 
+        "tvc": [
+            { label: "Pressure (Torr)", data: [], color: 3},
+            { label: "Position (%)", data: [], color: 4, yaxis: 2 }
+        ],
+        "mfcs": [
+            { label: "mfc-ch4-1", data: [], color: 2 },
+            { label: "mfc-ch4-2", data: [], color: 2 },
+            { label: "mfc-h2-1", data: [], color: 0 },
+            { label: "mfc-n2-1", data: [], color: 1 }
+        ],
+        "switches": [ 
+            { label: "sw-1", data: [] },
+            { label: "sw-2", data: [] },
+            { label: "sw-3", data: [] },
+            { label: "sw-4", data: [] },
+            { label: "sw-5", data: [] }
+        ]
+        };
+
+    var update_loop;
+    var update_interval = 1000;
+    $("#update-interval").change( function(ev) {
+        clearInterval(update_loop);
+        update_interval = $("#update-interval").val();
+        if(update_interval < 400) { alert("Intervals below 400 ms not allowed"); return; }
+        update_loop = setInterval(logupdate, update_interval);
+    });
+    $("#b-update").click(function(ev) { 
+        update_loop = setInterval(logupdate, update_interval);
+    });
+
+    cmd_filelist = {"cmd": "get_filelist", "args": [""]};
+    function get_logfilelist(){
+        $.ajax({
+            //async: cmdparams[3],
+            type: "POST",
+            url: "/loggenerator",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(cmd_filelist),
+            success: function (resp, tstatus, jqXHR) {
+                $("#logfile").empty();
+                console.log(resp);
+                for (var i=0; i<resp.args.length; i++) 
+                    { $("#logfile").append('<option id="'+resp.args[i]+'">'+resp.args[i]+'</option>'); }
+            },
+            error: function(resp, tstatus, jqXHR) { console.log(resp); console.log(tstatus); console.log(jqXHR); } 
+            });
+    };
+    get_logfilelist();
+
+    var range_lo = 0;
+    var range = 10000
+    $("#go-view").click( function(ev) {
+        range_lo = 0;
+        range = 10000;
+        update_plots($("#logfile").val());
+        console.log($("#logfile").val());
+    });
+    $("#go-forward").click( function(ev) {
+        range_lo += range;
+        update_plots($("#logfile").val());
+    });
+    $("#go-backward").click( function(ev) {
+        if (range_lo > range-1) range_lo -= range;
+        update_plots($("#logfile").val());
+    });
+    var selectedfile = '';
+    $("#logfile").change(function() {
+        update_plots($(this).val());
+        });
+    function update_plots(fname) {
+        clearInterval(update_loop);
+        selectedfile = fname;
+        viewcmds = [ {"cmd": "get_view", "args": {'fname':selectedfile, 'plots':["tvc"], 'plotname':"tvc", 'range':[range_lo, range_lo+range]}},
+                 {"cmd": "get_view", "args": {'fname':selectedfile, 'plots': ["mfc-ch4-1", "mfc-ch4-2", "mfc-h2-1", "mfc-n2-1"], 'plotname':"mfcs", 'range':[range_lo, range_lo+range]}} ];
+        for (var i=0; i<viewcmds.length; i++) { 
+            get_dataview(viewcmds[i]);
+        }
+    }
+    function get_dataview(c){
+        $.ajax({
+            type: "POST",
+            url: "/loggenerator",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(c),
+            success: function (resp, tstatus, jqXHR) {
+                    //console.log(resp['args'][3]);
+                    eval(resp['args']['dat']);
+                    //console.log(dat0);
+                    for (var i=0; i<resp["args"]['plots'].length; i++) {
+                        upd_data_set[resp["args"]['plotname']][i]["data"] = eval("dat"+i);
+                    }
+                    $.plot($("#plot-"+resp["args"]['plotname']), upd_data_set[resp["args"]['plotname']], plot_options);
+            },
+            error: err_func,
+            });
+    };
+
+    var upd_dlen = 200;
+    function logupdate(){
+        var cmd = {'cmd': 'get_single', 'args':[]};
+        $.ajax({
+            type: "POST",
+            url: "/loggenerator",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(cmd),
+            success: function (resp, tstatus, jqXHR) {
+                    console.log(resp);
+                    if(resp==[]) return;
+                    var now = new Date().getTime();
+                    if(upd_data_set["tvc"][0]["data"].length>upd_dlen) {
+                        upd_data_set["tvc"][0]["data"].shift();
+                        upd_data_set["tvc"][1]["data"].shift();
+                        upd_data_set["mfcs"][0]["data"].shift();
+                        upd_data_set["mfcs"][1]["data"].shift();
+                        upd_data_set["mfcs"][2]["data"].shift();
+                        upd_data_set["mfcs"][3]["data"].shift();
+                        }
+                    for(var i=0; i<resp.length; i++) {
+                        switch(resp[i].dev) {
+                        case 'tvc': //process pressure and position data.
+                            var t = resp[i].value[0].split(',');
+                            var p1 = parseFloat(t[0]), p2 = parseFloat(t[1]);
+                            upd_data_set["tvc"][0]["data"].push([now, p1]);
+                            upd_data_set["tvc"][1]["data"].push([now, p2]);
+                            $.plot($("#plot-tvc"), [upd_data_set["tvc"][0], upd_data_set["tvc"][1]], plot_options_tvc);
+                            break; 
+                        case 'mfc-ch4-1':
+                            upd_data_set["mfcs"][0]["data"].push([now, parseFloat(resp[i].value[0])]);
+                            break;
+                        case 'mfc-ch4-2':
+                            upd_data_set["mfcs"][1]["data"].push([now, 10*parseFloat(resp[i].value[0])]);
+                            break;
+                        case 'mfc-h2-1':
+                            upd_data_set["mfcs"][2]["data"].push([now, parseFloat(resp[i].value[0])]);
+                            break;
+                        case 'mfc-n2-1':
+                            upd_data_set["mfcs"][3]["data"].push([now, parseFloat(resp[i].value[0])]);
+                            break;
+                            }
+                        };
+                        $.plot($("#plot-mfcs"), [upd_data_set["mfcs"][0], upd_data_set["mfcs"][1], upd_data_set["mfcs"][2], upd_data_set["mfcs"][3]], plot_options);
+            },
+            error: err_func,
+            });
+    };
+
+});
+</script>
+
+</head>
+<body>
+
+            <label for="logfile">Select a log to view</label>
+            <select name="logfile" id="logfile"><option selected="selected">-</option></select>
+            <button id="go-view">view</button>
+            <button id="go-backward">backward</button>
+            <button id="go-forward">forward</button>
+            <br>
+
+<button id="b-update">Monitor current run updated at</button><input id="update-interval" type="text" value="1000" size="5"/>ms
+
+<!-- main table for all diagram, contains 1 row -->
+<table>
+    <tr>
+        <td>
+            <table>
+                <tr><td><div id="plot-tvc" style="width:800px;height:400px"></div></td></tr>
+                <tr><td><div id="plot-mfcs" style="width:800px;height:400px"></div></td></tr>
+                <tr><td><div id="plot-switches" style="width:800px;height:400px"></div></td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

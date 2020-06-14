@@ -1,0 +1,60 @@
+0 sw-before-pump set_state flow
+1597 tvc open
+16654 sw-before-inlet set_state flow
+19832 sw-ch4-1-by set_state flow
+21871 sw-ch4-2-by set_state flow
+23291 sw-h2-1-by set_state flow
+25905 sw-ch4-1-in set_state flow
+27098 sw-ch4-2-in set_state flow
+28191 sw-h2-1-in set_state flow
+30212 mfc-ch4-1 set_flow 2
+33009 mfc-ch4-2 set_flow 1
+36067 mfc-h2-1 set_flow 50
+50098 mfc-ch4-1 set_flow 0
+54040 sw-ch4-1-in set_state noflow
+59925 mfc-ch4-2 set_flow 0
+68830 sw-ch4-2-in set_state noflow
+2584928 tvc set_setp_state E Pressure 25 100
+2607004 tvc activate_setp E
+2934024 sw-before-inlet set_state noflow
+2935103 sw-before-pump set_state noflow
+2936163 tvc close
+2937062 sw-h2-1-in set_state noflow
+2938843 sw-h2-1-by set_state noflow
+2939875 sw-ch4-2-by set_state noflow
+2940137 sw-ch4-1-by set_state noflow
+3815303 mfc-h2-1 set_flow 0
+9817142 tvc set_setp_state E Pressure 10 100
+9818580 sw-before-pump set_state flow
+9820273 tvc activate_setp E
+9830450 tvc set_setp_state E Pressure 1 100
+9841503 tvc set_setp_state E Pressure 0.1 100
+9849100 tvc open
+9910345 tvc close
+9912135 sw-before-pump set_state noflow
+9993864 sw-before-pump set_state flow
+9995823 tvc open
+9996827 sw-before-inlet set_state flow
+9998238 sw-h2-1-by set_state flow
+9999283 sw-h2-1-in set_state flow
+10002936 mfc-h2-1 set_flow 50
+12529289 tvc set_setp_state E Pressure 25 100
+12580150 tvc activate_setp E
+13655439 tvc set_setp_state E Pressure 20 100
+13676689 tvc set_setp_state E Pressure 15 100
+13698008 tvc set_setp_state E Pressure 10 100
+13725298 tvc set_setp_state E Pressure 1 100
+13742313 tvc set_setp_state E Pressure 0.1 100
+13752606 tvc set_setp_state E Pressure 0.25 100
+13768766 sw-ch4-2-by set_state flow
+13866761 sw-ch4-1-by set_state flow
+13952626 mfc-ch4-2 set_flow 0.5
+14600660 mfc-ch4-2 set_flow 0
+17592241 sw-ch4-1-by set_state noflow
+17593286 sw-ch4-2-by set_state noflow
+17605774 tvc close
+17607013 sw-before-pump set_state noflow
+17935782 mfc-h2-1 set_flow 0
+17937882 sw-before-inlet set_state noflow
+17938319 sw-h2-1-by set_state noflow
+17939958 sw-h2-1-in set_state noflow

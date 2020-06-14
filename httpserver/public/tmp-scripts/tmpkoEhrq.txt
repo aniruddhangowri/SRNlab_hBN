@@ -1,0 +1,37 @@
+0 tvc close
+62069 sw-ventline set_state flow
+144951 sw-h2-1-in set_state flow
+147679 sw-h2-1-by set_state flow
+148975 sw-before-inlet set_state flow
+156938 mfc-h2-1 set_flow 30
+169793 mfc-h2-1 set_flow 40
+183887 mfc-n2-1 set_flow 300.0
+193692 mfc-n2-1 set_flow 30
+195654 sw-n2-1-by set_state flow
+197448 sw-n2-1-by set_state noflow
+207461 sw-before-pump set_state flow
+217724 tvc set_setp_state E Position 5 100
+220765 tvc activate_setp E
+231876 tvc set_setp_state E Position 5.5 100
+243894 tvc set_setp_state E Position 5.7 100
+268406 tvc set_setp_state E Position 5.9 100
+307168 tvc set_setp_state E Position 6.0 100
+317215 tvc set_setp_state E Position 6.1 100
+666053 tvc set_setp_state E Position 6.3 100
+819103 tvc set_setp_state E Position 6.5 100
+988900 tvc set_setp_state E Position 6.9 100
+1225202 tvc set_setp_state E Position 10 100
+1564331 tvc open
+1577175 mfc-h2-1 set_flow 50
+1860459 sw-before-inlet set_state noflow
+1931428 sw-ventline set_state noflow
+1950598 sw-ventline set_state flow
+1951668 sw-before-inlet set_state flow
+2192536 tvc activate_setp E
+2218826 tvc set_setp_state E Pressure 50 100
+3063764 mfc-h2-1 set_flow 100
+3511871 mfc-h2-1 set_flow 50
+3535162 tvc set_setp_state D Pressure 50 100
+3537267 tvc activate_setp D
+7914295 mfc-ch4-1 set_flow 35
+7937523 tvc set_setp_state D Pressure 45 100

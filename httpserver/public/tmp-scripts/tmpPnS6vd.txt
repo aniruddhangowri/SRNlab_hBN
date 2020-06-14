@@ -1,0 +1,30 @@
+0 sw-before-pump set_state flow
+2079 tvc open
+32262 sw-before-inlet set_state flow
+39123 sw-ch4-1-by set_state flow
+40875 sw-ch4-2-by set_state flow
+44670 sw-h2-1-by set_state flow
+48839 sw-ch4-1-in set_state flow
+50764 sw-ch4-2-in set_state flow
+52341 sw-h2-1-in set_state flow
+54837 mfc-ch4-1 set_flow 2
+57449 mfc-ch4-2 set_flow 1
+60841 mfc-h2-1 set_flow 50
+68459 mfc-ch4-1 set_flow 0
+72690 sw-ch4-1-in set_state noflow
+78892 mfc-ch4-2 set_flow 0
+85794 sw-ch4-2-in set_state noflow
+2105664 tvc set_setp_state E Pressure 0.4 100
+2122996 tvc activate_setp E
+2194378 tvc set_setp_state E Pressure 0.25 100
+2217072 mfc-h2-1 set_flow 75
+4489104 mfc-ch4-2 set_flow 0.4
+5657221 mfc-ch4-2 set_flow 0
+9110273 sw-ch4-1-by set_state noflow
+9111383 sw-ch4-2-by set_state noflow
+9118368 tvc close
+9120507 sw-before-pump set_state noflow
+9348494 mfc-h2-1 set_flow 0
+9350570 sw-before-inlet set_state noflow
+9351664 sw-h2-1-by set_state noflow
+9352715 sw-h2-1-in set_state noflow

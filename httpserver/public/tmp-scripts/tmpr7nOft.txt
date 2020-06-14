@@ -1,0 +1,9 @@
+0 tvc set_setp_state E Pressure 2.5 100
+87255 tvc activate_setp E
+109079 sw-ch4-1-in set_state noflow
+125623 sw-ch4-1-in set_state flow
+135258 sw-ch4-1-in set_state noflow
+6023207 mfc-ch4-2 set_flow 1
+6321796 mfc-ch4-2 set_flow 0
+6325863 mfc-ch4-1 set_flow 2
+6888972 mfc-ch4-1 set_flow 0

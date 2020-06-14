@@ -1,0 +1,17 @@
+body {
+      background-color: white;
+  }
+
+/*#the-string {
+        display: none;
+    }
+*/
+label{
+    width:80px;
+    overflow: hidden;
+}
+
+td {
+    vertical-align: middle;
+    padding:5px;
+}

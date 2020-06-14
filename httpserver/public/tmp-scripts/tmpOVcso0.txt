@@ -1,0 +1,16 @@
+0 mfc-h2-1 set_flow 2
+4846 mfc-h2-1 set_flow 0
+38464 mfc-n2-1 set_flow 2
+43914 mfc-n2-1 set_flow 0
+222744 tvc close
+243393 tvc open
+259659 tvc close
+309266 tvc set_setp_state E Position 10 100
+327851 tvc set_setp_state E Position 5 100
+368158 sw-before-pump set_state flow
+382508 sw-before-inlet set_state flow
+385865 sw-h2-1-by set_state flow
+387778 sw-h2-1-in set_state flow
+391310 mfc-h2-1 set_flow 30
+399575 mfc-h2-1 set_flow 340.0
+403729 mfc-h2-1 set_flow 40

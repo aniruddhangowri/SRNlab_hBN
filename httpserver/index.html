@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<link href="/static/css/style.css" rel="stylesheet">
+<script src="/static/js/json2.js"></script>
+<script src="/static/js/flot/jquery.js"></script>
+<script src="/static/js/flot/jquery.flot.js"></script>
+<script type="text/javascript" src="/static/js/flot/jquery.flot.time.js"></script>   
+<script type="text/javascript" src="/static/js/flot/jquery.flot.stack.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    /* Multiple commands are sent to the controlserver in a list. Each
+       command consists of a device name, command name, arguments (which
+       is a list) and a global request id. Control server dispatches the
+       command to different instruments in parallel, combines their responses
+       in a list which is sent back. The global id is not used at the moment
+       but is there to identify which html element sent which command.
+       This approach is called the bundled ajax.
+
+       A more elaborate system will have three queues: for requests to be sent,
+       for responses received and third one is a dict for callbacks to process 
+       those responses. The first queue is populated by html events, and is continuously
+       monitored for new requests to be dispatched. The html event also installs
+       the callbacks in another queue. When a response arrives it is put in the
+       second queue and another monitor function looks for global id in the callback
+       queue and executes the callback found. If a match is found, the callback
+       is executed and both the callback and the response are removed from the
+       queue. Otherwise nothing is done. The error can be handled by adding an
+       error callback dict and looking at error codes in responses.
+       The idea is quite straight forward, but I haven't come across any specific
+       implementation of it. Jquery.queue is more for synchronising a group
+       of ajax requests to some event. It doesn't solve the problem of out of
+       order arrivals (within or outside the group).
+     */
+
+    err_func = function(resp, tstatus, jqXHR) { console.log(resp); console.log(tstatus); console.log(jqXHR); };
+
+    /* Labels to indicate flow direction on the valves etc. The unicode labels
+       can also be used, just map 'flow' from controlserver to flow_cross etc. */
+    var flow_arrow = 'flow'; //or '\u25b6';
+    var noflow_cross = 'noflow'; //or '\u2718';
+    var divert_arrow = 'divert'; //&#x8664;
+
+    /* Pressure, valve position, MFC flow rates need continuous monitoring.
+       For this, we make a bundle of commands (==devname+command+arguments) and
+       send it to the control server in a repeated manner. The responses are
+       used to update the GUI elements (e.g. plots, labels).
+     */
+    //list of devices and commands used for updates
+    var upd_devlist = [ ["mfc-h2-2", "get_flow", [""]],
+        ["mfc-ch4-2", "get_flow", [""]],
+        ["mfc-h2-1", "get_flow", [""]],
+        ["mfc-n2-1", "get_flow", [""]],
+        ["tvc", "get_pressure_position", [""]]];
+    //which gui elements are changed as a result
+    var upd_guidict = {"tvc":"#pressure-position-label", "mfc-h2-2": "#mfc-h2-2-label",
+        "mfc-ch4-2": "#mfc-ch4-2-label", "mfc-h2-1": "#mfc-h2-1-label", "mfc-n2-1": "#mfc-n2-1-label"}
+    //which plots are updated.
+    /* var upd_data_set = { "tvc": { label: "Pressure (Torr)", data: [], color:0 }, //color: "#9EDAE5" },
+        "mfc-h2-2": { label: "mfc-h2-2 (sccm)", data: [], color: 1 }, //"#FF7F0E" },
+        "mfc-ch4-2": { label: "MFC-CH4-2 (sccm)", data: [], color: 2 }, //"#98DF8A" },        
+        "mfc-h2-1": { label: "MFC-H2-1 (sccm)", data: [], color: 3 }, //"#DBDB29" },
+        "mfc-n2-1": { label: "MFC-N2-1 (sccm)", data: [], color: 4 }; //"#7F7F7F" };*/
+    var upd_plotlist = { "tvc": [{ label: "", data: [[], []], color:3 },
+                                {label:"", data: [], color:4, yaxis:2}], //data has two series for pressure and position.
+        "mfc-h2-2": { label: "", data: [], color: 2 },
+        "mfc-ch4-2": { label: "", data: [], color: 2 },        
+        "mfc-h2-1": { label: "", data: [], color: 0 },
+        "mfc-n2-1": { label: "", data: [], color: 1 } };
+    var upd_dlen = 200; //= no of data points contained in the plots.
+    var plot_options = {
+        series: { shadowSize:0, lines: {show: true, lineWidth: 1.0, fill: true},
+                    trendline: { show:true, lineWidth:1, fill:true }},
+        xaxis : { show: false},
+        points:{ show: true, radius:1.5, lineWidth: 1.0}, 
+       };
+    var plot_options1 = {//used for pressure/position plot only.
+        series: { shadowSize:0, lines: {show: true, lineWidth: 1.0, fill: false},
+                    trendline: { show:true, lineWidth:1, fill:true }},
+        points:{ show: true, radius:2.0, lineWidth: 1.0}, 
+        xaxes: [{mode: "time", tickSize: [60, "second"]}],
+        yaxes: [ { min: 0 }, {position: "right"}],
+    };
+    //create the command list
+    var upd_cmdlist = [];
+    for(i=0; i<upd_devlist.length; i++) { upd_cmdlist.push({"dev": upd_devlist[i][0], "cmd": upd_devlist[i][1], "args": upd_devlist[i][2]});};
+    //the function used for each update cycle.
+    function update(){
+        $.ajax({
+            type: "POST",
+            url: "/generator",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(upd_cmdlist),
+            success: function (resp, tstatus, jqXHR) {
+                    for (var i=0; i<resp.length; i++) { 
+                        $(upd_guidict[resp[i].dev]).text(resp[i].value[0]); }
+                    var now = new Date().getTime();
+                    // move one older plot data out if total data points > upd_dlen
+                    if(upd_plotlist["tvc"][0]["data"].length>upd_dlen) { 
+                        for(var key in upd_plotlist) { 
+                        //tvc-plot has pressure and position data so this special case.
+                        if(key=="tvc") { upd_plotlist[key][0]["data"].shift(); upd_plotlist[key][1]["data"].shift(); }
+                        else { upd_plotlist[key]["data"].shift(); }
+                        }
+                    }
+                    for(var i=0; i<resp.length; i++) {
+                        if(resp[i].dev=="tvc") { //process pressure and position data.
+                            var t = resp[i].value[0].split(',');
+                            var p1 = parseFloat(t[0]), p2 = parseFloat(t[1]);
+                            upd_plotlist["tvc"][0]["data"].push([now, p1]);
+                            upd_plotlist["tvc"][1]["data"].push([now, p2]);
+                            $.plot($("#plot-tvc"), [upd_plotlist["tvc"][0], upd_plotlist["tvc"][1]], plot_options1);
+                            }
+                        else {
+                            upd_plotlist[resp[i].dev]["data"].push([now, parseFloat(resp[i].value[0])]);
+                            $.plot($("#plot-"+resp[i].dev), [upd_plotlist[resp[i].dev]], plot_options);
+                            }
+                        };
+                    },
+            error: err_func,
+            });
+    };
+    //install the continuous update
+    //In a more sophisticated version, this loop will be stopped when 
+    //executing "set" type of commands and installed after the success of that command.
+    var update_loop = setInterval(update, $("#update-interval").val());
+    $("#update-interval").change( function(ev) {
+        clearInterval(update_loop);
+        var update_interval = $("#update-interval").val();
+        if(update_interval < 400) { alert("Intervals below 400 ms not allowed"); return; }
+        update_loop = setInterval(update, update_interval);
+    });
+    $("#b-update").click(function(ev) { update() });
+
+    /* Execution of "set" type of commands (e.g. ch4-mfc-1 set_flow 10 sccm):
+       When a UI element is changed by user to initiate a "set" command, we
+       form a command (as above) and call cmd_dispatcher, which executes this
+       command on controlserver (via an AJAX call) and passes the response to
+       gui_update_resp, which uses this info to update GUI elements corresponding
+       to each command.
+       This approach needs only a command string (and not any other references
+       to UI elements etc), and therefore is also used to run scripts (see below), 
+       as scripts are a list of commands.
+    */
+
+    //to append cmds to executed list textarea.
+    function append_to_executed(cmd) {
+        var c = $.now() +' '+ cmd["dev"] +' '+ cmd["cmd"] +' ';
+        for (var i=0; i<cmd["args"].length; i++) {c += cmd["args"][i] + ' ';}
+        c += '\n';
+        $("#executed").val($("#executed").val()+c);
+    };
+
+    var switchpos = ['#tvc-open', '#tvc-close'];
+    //takes resp and cmd string, looks at the command value and updates gui
+    //elements accordingly. If command values for two devices collide, one
+    //can also test for cmd['dev'] to decide (this is not the case till now).
+    function gui_update_resp(resp, cmd){
+        //we should check the success of executed command, will be done later.
+        switch(cmd['cmd']){
+            case 'open': //tvc valve open and close.
+            case 'close':
+                //console.log(resp); console.log(tstatus); console.log(jqXHR);
+                if(resp[0].value[0]=='close'){ $("#tvc-close").prop('checked', true); }
+                else { $("#tvc-open").prop('checked', true); }
+                break;
+            case 'activate_setp': //activate tvc setpoint.
+                var recv_setp = resp[0].value[0];
+                var recv_val = resp[0].value[1];
+                $("#tvc-setp"+recv_setp).prop('checked', true);
+                //$("#tvc-setp"+recv_setp+"-set").attr("disabled", true);
+                break;
+            case 'set_setp_state': //set the value and mode for tvc setpoint.
+                var recv_setp = resp[0].value[0];
+                var recv_val = resp[0].value[1];
+                $("#tvc-setp"+recv_setp+"-mode").text(recv_val[0]);
+                $("#tvc-setp"+recv_setp+"-val").val(recv_val[1]);
+                $("#tvc-setp"+recv_setp+"-set").attr("disabled", true);
+                break;
+            case 'set_setp_params': //set gain and phanse for tvc setpoint in pressure control mode.
+                $("#tvc-param"+resp[0].value[0]+"-set").attr("disabled", true);
+                break;
+            case 'set_flow':
+                $("#"+resp[0].dev).val(resp[0].value[0]);
+                $("#"+resp[0].dev+"-label").text(resp[0].value[0]);
+                break;
+            case 'set_state': //turn flow on or off in valves.
+                if(resp[0].value[0]==noflow_cross){ $("#"+resp[0].dev).text(noflow_cross); }
+                else { $("#"+resp[0].dev).text(flow_arrow); }
+                break;
+            case 'get_state': //get the state of the valves.
+                $("#"+resp[0].dev).text(resp[0].value[0]);
+                return;
+            case 'get_fs_range': //get full scale range of MFCs.
+                $("#"+resp[0].dev+"-range").text(resp[0].value[0]);
+                return;
+            case 'get_setp_state': //setpoint value and mode for tvc.
+                var recv_setp = resp[0].value[0];
+                var recv_val = resp[0].value[1];
+                $("#tvc-setp"+recv_setp+"-mode").text(recv_val[0]);
+                $("#tvc-setp"+recv_setp+"-val").val(recv_val[1]);
+                $("#tvc-setp"+recv_setp+"-set").attr("disabled", true);
+                return;
+            case 'get_setp_params': //setpoint gain and phase for tvc.
+                var recv_setp = resp[0].value[0];
+                var recv_val = resp[0].value[1];
+                $("#tvc-param"+recv_setp+"-gain").val(recv_val[0]);
+                $("#tvc-param"+recv_setp+"-phase").val(recv_val[1]);
+                $("#tvc-param"+recv_setp+"-set").attr("disabled", true);
+                return;
+            case 'startnew'://new file log
+            case 'stoplog'://stop current log file
+                break;
+            }
+            //in the end append the executed command to "executed" textarea.
+            append_to_executed(cmd);
+    }
+
+    //takes a command string, does an AJAX call and passes response for gui update.
+    function cmd_dispatcher(cmd) {
+        $.ajax({
+            async: false, type: "POST", url: "/generator", contentType: "application/json",
+            dataType: "json", data: JSON.stringify([cmd]),
+            success: function (resp, tstatus, jqXHR) {
+                gui_update_resp(resp, cmd);
+                },
+            error: err_func,
+        });
+    };
+    
+    /* To change the file in which all commands and responses are logged. This
+       file is later read by logprocessing interface (http://localhost/logs.html).
+       The furnace controller handles this command. The logs can be again redirected
+       to default by pressing stop button. "Run details" box can be used to put
+       some information in the log file. These inputs are not checked, which is
+       a security bug.
+     */
+    function set_logfile(what) {
+        var fname = $("#logfile-name").val();
+        if (fname == "") { return; }
+        var details = $("#run-details").val();
+        var c = '', t1 = '', t2 = '';
+        if(what=='new') { c = "startnew"; t1 = "#use-logfile"; t2 = "#stop-logging"; }
+        if(what=='stop') { c = "stoplog"; t2 = "#use-logfile"; t1 = "#stop-logging"; }
+        var cmd = {"dev": "controller", "cmd": c, "args": [fname, details]};
+        cmd_dispatcher(cmd);
+        $(t1).attr("disabled", true);
+        $(t2).attr("disabled", false);
+    };
+    $("#use-logfile").click(function(ev) { set_logfile("new"); });
+    $("#stop-logging").click(function(ev) { set_logfile("stop"); });
+    $("#logfile-name").change(function(ev) { $("#use-logfile").attr("disabled", false); });
+    
+    /* handler for toggling switches */
+    function toggle_switch(switchname) {
+        var what = '';
+        if($("#"+switchname).text()==flow_arrow) { what = "noflow"; } else { what = "flow"; }
+        var cmd = {"dev": switchname, "cmd": "set_state", "args":[what]};
+        cmd_dispatcher(cmd);
+    };
+    var switches = ['sw-before-pump', 'sw-before-inlet', 'sw-ch4-1-in', 'sw-ch4-1-by',
+        'sw-ch4-2-in', 'sw-ch4-2-by', 'sw-h2-1-in', 'sw-h2-1-by', 'sw-n2-1-by', 'sw-ventline'];
+    /*note that a simple minded .click(function(ev) {toggle_switch(switches[i]));
+      doesn't work, since the argument to .click() are not frozen when they are
+      passed. So we have to create (annonymous) functions bound to each of the
+      switches.
+      One can also list all switches.length number of call to .click, but that
+      takes many lines (it is done for 4 MFC calls below, see that for an example).
+    */
+    for(var i=0; i<switches.length; i++) {
+        var func = function (x) { return function() { toggle_switch(x); } };
+        $("#"+switches[i]).click(func(switches[i]));
+    }
+    // Now do actual updates. These four for loops are executed when the
+    // page is loaded, to read the device state and update GUI elements.
+    for(i=0; i<switches.length; i++) { 
+        cmd = {"dev": switches[i], "cmd": "get_state", "args": [""]};
+        cmd_dispatcher(cmd);
+    };
+    var mfc_list = ['mfc-h2-2', 'mfc-ch4-2', 'mfc-h2-1', 'mfc-n2-1'];
+    for(i=0; i<mfc_list.length; i++) { 
+        cmd = {"dev": mfc_list[i], "cmd": "get_fs_range", "args": [""]};
+        cmd_dispatcher(cmd);
+    };
+    var setpnames = ['A', 'B', 'C', 'D', 'E'];
+    for(i=0; i<setpnames.length; i++) { 
+        cmd = {"dev": "tvc", "cmd": "get_setp_state", "args":[setpnames[i]]};
+        cmd_dispatcher(cmd);
+    };
+    for(i=0; i<setpnames.length; i++) { 
+        cmd = {"dev": "tvc", "cmd": "get_setp_params", "args":[setpnames[i]]};
+        cmd_dispatcher(cmd);
+    };
+
+    function set_mfc_flow(mfcname) {
+        //var range = parseFloat($("#"+mfcname+"-range").val());
+        //var requested = parseFloat($("#"+mfcname).val());
+        //if (requested > range) { $("#"+mfcname+"-label").text("range exceeded"); return; }
+        var cmd = {"dev": mfcname, "cmd": "set_flow", "args": [$("#"+mfcname).val()]};
+        cmd_dispatcher(cmd);
+    };
+    $("#mfc-h2-2").change(function(ev) { set_mfc_flow("mfc-h2-2"); });
+    $("#mfc-ch4-2").change(function(ev) { set_mfc_flow("mfc-ch4-2"); });
+    $("#mfc-h2-1").change(function(ev) { set_mfc_flow("mfc-h2-1"); });
+    $("#mfc-n2-1").change(function(ev) { set_mfc_flow("mfc-n2-1"); });
+
+    //tvc valve open/close and activate setpoint commands.
+    $("input[name='tvc-switch']").click(function(ev) {
+        var setpname = $(this).val();
+        var cmd;
+        if (setpname=='open' || setpname=='close') {
+            cmd = {"dev": "tvc", "cmd": setpname, "args": [""]};
+        } else { cmd = {"dev": "tvc", "cmd": "activate_setp", "args": [setpname]}; }
+        cmd_dispatcher(cmd);
+    });
+    
+    //tvc setpoint value and mode setting.
+    function set_setpoint_value(setpname) {
+        var setp_val = $("#tvc-setp"+setpname+'-val').val();
+        var setp_mode = $("#tvc-setp"+setpname+'-mode').text();
+        var setp_softstart = 100.0; //not exposed to UI till now.
+        var cmd = {"dev": "tvc", "cmd": "set_setp_state", "args": [setpname, setp_mode, setp_val, setp_softstart]};
+        cmd_dispatcher(cmd);
+    };
+    for(var i=0; i<setpnames.length; i++) { var func = function (x) { return function() { set_setpoint_value(x); } };
+        $("#tvc-setp"+setpnames[i]+"-set").click(func(setpnames[i])); }
+    //tvc display change in mode.
+    function toggle_mode(setpname) {
+        var name = "#tvc-setp"+setpname+"-mode";
+        if( $(name).text() == 'Pressure') { $(name).text('Position'); }
+        else { $(name).text('Pressure'); }
+        $("#tvc-setp"+setpname+"-set").attr("disabled", false);
+    };
+    for(var i=0; i<setpnames.length; i++) { var func = function (x) { return function() { toggle_mode(x); } };
+        $("#tvc-setp"+setpnames[i]+"-mode").click(func(setpnames[i])); }
+    //$("#tvc-setpA-mode").click(function(ev) { toggle_mode("A"); });
+    
+    //disable the "set" button for setpoint activation once "setp_activate" executes.
+    function disable_setp_set(setpname) {
+        var name = "#tvc-setp"+setpname+"-val";
+        $("#tvc-setp"+setpname+"-set").attr("disabled", false);
+    };
+    for(var i=0; i<setpnames.length; i++) { 
+        var func = function (x) { return function() { $("#tvc-setp"+x+"-set").attr("disabled", false); } };
+        $("#tvc-setp"+setpnames[i]+"-val").change(func(setpnames[i])); }
+    // $("#tvc-setpA-val").change(function(ev) { $("#tvc-setpA-set").attr("disabled", false); });
+    
+    //set setpoint gain and phase for tvc
+    function set_param_value(name) {
+        var gain = $("#tvc-param"+name+'-gain').val();
+        var phase = $("#tvc-param"+name+'-phase').val();
+        var cmd = {"dev": "tvc", "cmd": "set_setp_params", "args": [name, gain, phase]};
+        cmd_dispatcher(cmd, [name]);
+    };
+    for(var i=0; i<setpnames.length; i++) { var func = function (x) { return function() { set_param_value(x); } };
+        $("#tvc-param"+setpnames[i]+"-set").click(func(setpnames[i])); }
+    //$("#tvc-paramA-set").click(function(ev) { set_param_value("A"); });
+    for(var i=0; i<setpnames.length; i++) { 
+        var func = function (x) { return function() { $("#tvc-param"+x+"-set").attr("disabled", false); } };
+        $("#tvc-param"+setpnames[i]+"-gain").click(func(setpnames[i]));
+        $("#tvc-param"+setpnames[i]+"-phase").click(func(setpnames[i]));
+    }
+    //$("#tvc-paramA-gain").change(function(ev) { $("#tvc-paramA-set").attr("disabled", false); });
+    //$("#tvc-paramA-phase").change(function(ev) { $("#tvc-paramA-set").attr("disabled", false); });
+
+
+    //"executed" textarea contains a list of all commands executed by user. A "save"
+    //button saves this list to a file.
+    function save_script() {
+        var cmd = {'dev':'scriptmanager', 'cmd': 'save', 'args': [$("#executed").val()]};
+        $.ajax({
+            async: false, type: "POST", url: "/scripthandler", contentType: "application/json",
+            dataType: "json", data: JSON.stringify([cmd]),
+            success: function (resp, tstatus, jqXHR) {
+                var fname = resp[0].args[0];
+                //console.log(fname);
+                window.open(fname);
+            },
+            error: err_func,
+        })
+    };
+    $("#executed-save").click(function(ev) { save_script(); });
+    $("#executed-reset").click(function(ev) { $("#executed").val(''); });
+
+    /* "tobeexec" textarea has a list of commands that can be stepped
+       through or run as a script. One can either write these commands
+       or load them from a file saved from "executed" textarea.
+    */
+    // at start reset the tobeexec area
+    $("#tobeexec").val('');
+    
+    //provides a "Browse..." button to load files in "tobeexec" textarea.
+    function readFile (ev) {
+        var files = ev.target.files;
+        var file = files[0];
+        var reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function() { $("#tobeexec").val(this.result); }
+    }
+    $("#tobeexec-load").change(function(ev) {readFile(ev);});
+    
+    //get the current line under caret in textarea. This is used to
+    //step thorugh the list of commands displayed there. After each
+    //execution, the caret is moved to start of next line. (see step
+    //and run commands below).
+    function get_cursor_line() {
+        var cpos = $('#tobeexec').prop("selectionStart");
+        var i1, i2;
+        var s = $("#tobeexec").val();
+        for(i1=cpos; i1>0; i1--) { if (s[i1]=='\n') { break;} }
+        for(i2=cpos; i2<s.length; i2++) { if (s[i2]=='\n') { break;} }
+        var line = $.trim($("#tobeexec").val().slice(i1, i2));
+        return [line, i1, i2];
+    };
+    //parse a command line and make a dictionary for command that can
+    //be sent to cmd_dispatcher.
+    function make_cmddict(line) {
+        var parts = line.split(' ');
+        var cmd = {'dev':parts[1], 'cmd':parts[2], 'args':parts.slice(3)};
+        return [cmd, parseInt(parts[0])]; //waittime  not used in stepped execution
+    };
+    //step through the textarea lines and execute them.
+    function step_exec() {
+        var [line, i1, i2] = get_cursor_line();
+        if(!(line=="" || line[0]=='#')) {
+            var t = make_cmddict(line);
+            cmd_dispatcher(t[0]); };
+        $("#tobeexec")[0].selectionStart = i2+1;
+        $("#tobeexec")[0].selectionEnd = i2+1;
+    };
+    $("#tobeexec-step").click(function(ev) { step_exec(); });
+
+    /* "tobeexec" textarea lines are read from the start, make into
+       commands and scheduled to be executed at the time denoted (by use
+       of setTimer). The handles returned by setTimer call are stored in
+       exec_timer list, which is used to cancel those call in case "abort"
+       button is pressed. 
+       run and step buttons are disabled during this time.
+       */
+    var exec_stepnum = 0;
+    var exec_timer = [];
+    function step_run() {
+        exec_stepnum = 0;
+        exec_timer = [];
+        $("#tobeexec-run").attr("disabled", true);
+        $("#tobeexec-step").attr("disabled", true);
+        $("#tobeexec").val($.trim($("#tobeexec").val()));
+        $("#tobeexec")[0].selectionStart = 0;
+        $("#tobeexec")[0].selectionEnd = 0;
+        var func = function(c) { return function() { cmd_dispatcher(c); }; };
+        var line, i1, i2;
+        while (true) {
+            [line, i1, i2] = get_cursor_line();
+            if(!(line=='' || line[0]=='#')) {
+                var t = make_cmddict(line);
+                var waittime = t[1];
+                exec_timer[exec_timer.length] = setTimeout( func(t[0]), waittime);
+                exec_stepnum += 1;
+            }
+            if($("#tobeexec").val().length==i2){ break;}
+            $("#tobeexec")[0].selectionStart = i2+1;
+            $("#tobeexec")[0].selectionEnd = i2+1;
+        }
+        exec_timer[exec_timer.length] = setTimeout( function(){ 
+                $("#tobeexec-step").attr("disabled", false);
+                $("#tobeexec-run").attr("disabled", false);}, waittime+100);
+    }
+    $("#tobeexec-run").click(function(ev) { step_run(); });
+    //handler when "abort" is pressed.
+    function step_stop() {
+        for(var i=0; i<exec_timer.length; i++) { clearTimeout(exec_timer[i]); }
+        exec_timer = [];
+        exec_stepnum = 0;
+        $("#tobeexec-run").attr("disabled", false);
+        $("#tobeexec-step").attr("disabled", false);
+    }
+    $("#tobeexec-stop").click(function(ev) { step_stop(); });
+});
+</script>
+
+</head>
+<body>
+
+<table>
+    <tr>
+        <td> <input placeholder="Log file name" id="logfile-name" type="text" size="30" value=""/> </td>
+        <td> <input placeholder="Run details" id="run-details" type="text" size="60" value=""/> </td>
+        <td> <button id="use-logfile">Start Logging</button></td>
+        <td> <button id="stop-logging">Stop Logging</button></td>
+        <td> <a href="./logs/" target="_bkank">View Logs</a> </td>
+    </tr>
+    <tr>
+        <td><button id="b-update">Update at</button><input id="update-interval" type="text" value="1000" size="5"/>ms</td>
+        <td> <label for="sw-ventline" id="sw-ventline-label">Vent line</label><button id="sw-ventline">noflow</button></td>
+    </tr>
+</table>
+
+<table>
+<!-- main table for all diagrams -->
+<tr>
+<td>
+    <!-- input manifold -->
+    <table> <!-- this table is 3 x 3 -->
+        <tr><th align="middle" colspan=4 style="background-color:aqua"> Input Manifold </th> </tr>
+    <tr><th align="left">Feed valves</th> <th colspan=2 align="middle">MFCs</th> <th align="right">Bypass valves</th></tr>
+    <tr>
+        <td>
+            <font size=2>sw-ch4-1-in</font><br>
+            <button id="sw-ch4-1-in">flow</button></td>
+        <td style="background-color:salmon">
+                <label for="mfc-h2-2" id="mfc-h2-2-name" style="display: inline-block; width: 120px;">mfc-h2-2</label> <br>
+                <label for="mfc-h2-2" id="mfc-h2-2-range">Range:</label> sccm<br>
+                <input id="mfc-h2-2" type="text" align="middle" value="0.0" size="4" name="mfc-h2-2-flow"/><br>
+                <label for="mfc-h2-2" id="mfc-h2-2-label">0</label> sccm
+        </td>
+        <td><div id="plot-mfc-h2-2" style="width:200px;height:100px"></div></td>
+        <td>
+            <font size=2>sw-ch4-1-by</font><br>
+            <button id="sw-ch4-1-by">flow</button></td>
+    </tr>
+    <tr>
+        <td>
+            <font size=2>sw-ch4-2-in</font><br>
+            <button id="sw-ch4-2-in">flow</button></td>
+        <td style="background-color:salmon">
+            <label for="mfc-ch4-2" id="mfc-ch4-2-name" style="display: inline-block; width: 120px;">mfc-ch4-2</label><br>
+                <label for="mfc-ch4-2" id="mfc-ch4-2-range">Range:</label> sccm<br>
+            <input id="mfc-ch4-2" type="text" value="0.0" size="4" name="mfc-ch4-2-flow"/><br>
+            <label for="mfc-ch4-2" id="mfc-ch4-2-label">0</label> sccm
+        </td>
+        <td><div id="plot-mfc-ch4-2" style="width:200px;height:100px"></div></td>
+        <td>
+            <font size=2>sw-ch4-2-by</font><br>
+            <button id="sw-ch4-2-by">flow</button></td>
+    </tr>
+    <tr>
+        <td>
+            <font size=2>sw-h2-1-in</font><br>
+            <button id="sw-h2-1-in">flow</button></td>
+        <td style="background-color:gold">
+            <label for="mfc-h2-1" id="mfc-h2-1-name" style="display: inline-block; width: 120px;">mfc-h2-1</label><br>
+                <label for="mfc-h2-1" id="mfc-h2-1-range">Range:</label> sccm<br>
+            <input id="mfc-h2-1" type="text" value="0.0" size="4" name="mfc-h2-1-flow"/><br>
+            <label for="mfc-h2-1" id="mfc-h2-1-label">0</label> sccm
+        </td>
+        <td> <div id="plot-mfc-h2-1" style="width:200px;height:100px"></div></td>
+        <td>
+            <font size=2>sw-h2-1-by</font><br>
+            <button id="sw-h2-1-by">flow</button></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="background-color:LightBlue">
+            <label for="mfc-n2-1" id="mfc-n2-1-name" style="display: inline-block; width: 120px;">mfc-n2-1</label><br>
+                <label for="mfc-n2-1" id="mfc-n2-1-range">Range:</label> sccm<br>
+            <input id="mfc-n2-1" type="text" value="0.0" size="4" name="mfc-n2-1-flow"/><br>
+            <label for="mfc-n2-1" id="mfc-n2-1-label">0</label> sccm
+        </td>
+        <td><div id="plot-mfc-n2-1" style="width:200px;height:100px"></div></td>
+        <td>
+            <font size=2>sw-n2-1-by</font><br>
+            <button id="sw-n2-1-by">flow</button></td>
+    </tr>
+</table>
+    
+</td>
+
+<td> 
+    <table><tr><td><font size=2>sw-before-inlet</font><br><button id="sw-before-inlet">flow</button></td>
+            <td bgcolor="orangered">Furnace</td></tr></table>
+</td>
+
+<td>
+    <table>
+        <tr><th colspan=2 align="middle" style="background-color:Gold">Throttle Valve controller</td></tr>
+        <tr>
+            <td style=""> 
+                    <div id="tvc-tabs-1">
+                        <input type="radio" name="tvc-switch" id="tvc-open" value="open">open
+                        <input type="radio" name="tvc-switch" id="tvc-close" value="close">close
+                        <br>
+                        <input type="radio" name="tvc-switch" id="tvc-setpA" value="A">A
+                        <input id="tvc-setpA-val" type="text" value="0.0" size="4"/>
+                        <button id="tvc-setpA-mode">Pressure</button>
+                        <button id="tvc-setpA-set">Set</button><br>
+                        <input type="radio" name="tvc-switch" id="tvc-setpB" value="B">B
+                        <input id="tvc-setpB-val" type="text" value="0.0" size="4"/>
+                        <button id="tvc-setpB-mode">Pressure</button>
+                        <button id="tvc-setpB-set">Set</button><br>
+                        <input type="radio" name="tvc-switch" id="tvc-setpC" value="C">C
+                        <input id="tvc-setpC-val" type="text" value="0.0" size="4"/>
+                        <button id="tvc-setpC-mode">Pressure</button>
+                        <button id="tvc-setpC-set">Set</button><br>
+                        <input type="radio" name="tvc-switch" id="tvc-setpD" value="D">D
+                        <input id="tvc-setpD-val" type="text" value="0.0" size="4"/>
+                        <button id="tvc-setpD-mode">Pressure</button>
+                        <button id="tvc-setpD-set">Set</button><br>
+                        <input type="radio" name="tvc-switch" id="tvc-setpE" value="E">E
+                        <input id="tvc-setpE-val" type="text" value="0.0" size="4"/>
+                        <button id="tvc-setpE-mode">Pressure</button>
+                        <button id="tvc-setpE-set">Set</button><br>
+                    </div>
+                </td>
+                <td style="background-color:lightgrey">
+                    <div id="tvc-tabs-2">
+                        TVC pressure setpoint<br> Gain and Phase<br>
+                        A<input id="tvc-paramA-gain" type="text" value="1000" size="4"/>
+                        <input id="tvc-paramA-phase" type="text" value="20" size="4"/>
+                        <button id="tvc-paramA-set">Set</button><br>
+                        B<input id="tvc-paramB-gain" type="text" value="1000" size="4"/>
+                        <input id="tvc-paramB-phase" type="text" value="20" size="4"/>
+                        <button id="tvc-paramB-set">Set</button><br>
+                        C<input id="tvc-paramC-gain" type="text" value="1000" size="4"/>
+                        <input id="tvc-paramC-phase" type="text" value="20" size="4"/>
+                        <button id="tvc-paramC-set">Set</button><br>
+                        D<input id="tvc-paramD-gain" type="text" value="1000" size="4"/>
+                        <input id="tvc-paramD-phase" type="text" value="20" size="4"/>
+                        <button id="tvc-paramD-set">Set</button><br>
+                        E<input id="tvc-paramE-gain" type="text" value="1000" size="4"/>
+                        <input id="tvc-paramE-phase" type="text" value="20" size="4"/>
+                        <button id="tvc-paramE-set">Set</button><br>
+                    </div>
+                </div>
+            <td>
+                <table><tr><td><font size=2>sw-before-pump</font><br><button id="sw-before-pump">noflow</button> </td>
+                    <td bgcolor="lightseagreen">Pump</td></tr></table>
+        </tr>
+        <tr><td colspan=2>
+                Press,Pos(Torr,%):<label id="pressure-position-label" >0,0</label><br>
+                <div id="plot-tvc" style="width:500px;height:250px"></div></td></tr>
+    </table>
+
+</td>
+</tr>
+</table>
+
+<hr>
+<table>
+    <tr>
+
+        <td>Executed commands:<br>
+            <textarea readonly="readonly" id="executed" rows="20" cols="80" wrap="physical"></textarea></td>
+        <td> Commands to be executed:<br>
+            <textarea id="tobeexec" rows="20" cols="80" wrap="physical"></textarea></td>
+    </tr>
+    <tr>
+        <td>
+            <button id="executed-save">Save</button>
+            <button id="executed-reset">Reset</button>
+        </td>
+        <td>
+            <input type="file" id="tobeexec-load" name="tobeexec-load" enctype="multipart/form-data"/>
+            <button id="tobeexec-step">Step</button>
+            <button id="tobeexec-run">Run</button>
+            <button id="tobeexec-stop">Abort</button>
+        </td>
+    </tr>
+</table>
+<!--    <svg height="100" width="100"> <g>
+      <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+      <text id='pump-valve-label' x="0" y="50" font-size="50" fill="orange">Blocking</text>
+      </g> </svg> -->
+
+</body>
+</html>

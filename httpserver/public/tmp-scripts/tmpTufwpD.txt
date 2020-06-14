@@ -1,0 +1,49 @@
+0 sw-before-pump set_state flow
+1983 tvc open
+23906 sw-before-inlet set_state flow
+28118 sw-ch4-1-by set_state flow
+30967 sw-ch4-2-by set_state flow
+33293 sw-h2-1-by set_state flow
+35955 sw-n2-1-by set_state flow
+38011 sw-ch4-1-in set_state flow
+39988 sw-ch4-2-in set_state flow
+42943 sw-h2-1-in set_state flow
+45403 mfc-ch4-1 set_flow 1
+48893 mfc-ch4-2 set_flow 1
+51986 mfc-h2-1 set_flow 50
+56024 mfc-n2-1 set_flow 50
+69027 mfc-ch4-1 set_flow 0
+73076 sw-ch4-1-in set_state noflow
+78154 mfc-ch4-2 set_flow 0
+82113 sw-ch4-2-in set_state noflow
+2627389 tvc set_setp_state E Pressure 40 100
+2632713 tvc activate_setp E
+4224702 mfc-n2-1 set_flow 25
+4286827 mfc-n2-1 set_flow 0
+4304622 sw-n2-1-by set_state noflow
+4315697 mfc-h2-1 set_flow 100
+4369772 mfc-h2-1 set_flow 150
+4414978 mfc-h2-1 set_flow 200
+4763987 tvc set_setp_state E Pressure 30 100
+4787804 tvc set_setp_state E Pressure 20 100
+4808780 tvc set_setp_state E Pressure 10 100
+4829867 tvc set_setp_state E Pressure 1 100
+4850412 tvc set_setp_state E Pressure 0.1 100
+4872020 mfc-h2-1 set_flow 150
+4901106 mfc-h2-1 set_flow 100
+4925160 tvc open
+4941523 mfc-h2-1 set_flow 50
+4971234 mfc-h2-1 set_flow 25
+5081920 mfc-ch4-2 set_flow 0.25
+6870034 mfc-ch4-2 set_flow 0
+9951808 sw-ch4-1-by set_state noflow
+9953949 sw-ch4-2-by set_state noflow
+9963982 mfc-h2-1 set_flow 50
+9983029 mfc-h2-1 set_flow 100
+10017654 tvc close
+10020199 sw-before-pump set_state noflow
+10286218 mfc-h2-1 set_flow 0
+10289797 sw-before-inlet set_state noflow
+10290816 sw-h2-1-by set_state noflow
+10294884 sw-h2-1-in set_state noflow
+10296947 sw-ventline set_state noflow

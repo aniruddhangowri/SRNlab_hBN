@@ -1,0 +1,9 @@
+0 tvc open
+88075 sw-before-pump set_state flow
+149256 sw-before-inlet set_state flow
+159685 sw-h2-1-in set_state flow
+175700 mfc-h2-1 set_flow 100
+207240 sw-h2-1-by set_state flow
+225195 sw-h2-1-by set_state noflow
+226579 sw-h2-1-in set_state noflow
+231257 mfc-h2-1 set_flow 0
