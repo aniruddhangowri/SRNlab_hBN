@@ -54,6 +54,15 @@ _mfc_ch4_2 = {'conn':'rs485', 'devid':33, 'init_params': {'fs_range': 10.0, 'ini
 # This reduces the number of DIO lines to 16 from total available 20.
 # The DIO lines are used to control pneumatic switches, so number of switches
 # that can be controlled is reduced in that case. 
+
+
+# In the case of multiple Labjacks, we may need additional identifiers for distinguishing
+# Since the connection protocol for Labjack is the same, we can continue to use the same library
+# However, we would need to distinguish between the two Labjacks. This can be added to the devid list
+# but it needs to be ascertained that it does not cause compatibility issues in the code
+# From the outset, it does not seem to be the case.
+
+
 _mfc_h2_2 = {'conn':'labjack', 'devid':['AIO', 3, 1], 'init_params': {'fs_range': 2000.0, 'init_val': 0.0}}
 _mfc_h2_1 = {'conn':'labjack', 'devid':['AIO', 2, 0], 'init_params': {'fs_range': 2000.0, 'init_val': 0.0}}
 

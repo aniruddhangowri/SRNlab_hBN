@@ -34,11 +34,23 @@ chans = {'rs232':rs232, 'rs485':rs485, 'labjack':labjack, 'test_ch':test_ch}
 #chans = {'rs232':rs232, 'labjack':labjack, 'test_ch':test_ch}
 for k,v in chans.iteritems(): v.init_comm()
 
+# Initializing connections to components.
+# In the case of labjack, function init_comm initializes a dictionary of a thread-Rlock instance
+# and port corresponding to a U6 device
+
 import devconfig
 funcmap = {}
 for k, v in devconfig.devlist.iteritems():
     funcmap[k] = chans[v['conn']].funcmap(k, v['devid'])
+
 # now funcmap has the functions available for each of the devices.
+# funcmap is a dictionary of the all components (MFCs, SW etc) associated with the all the functions
+# corresponding to it.
+# There is a seperate function, "funcmap" that is present in each of the connection libraries
+# For each device present in devconfig.devlist, funcmap creates a new class instances for the corresponding
+# connenction protocol and returs a dictionary of the assoicated functions for control.
+
+
 print "\n\tReading configuration from devconfig.py and initialising the devices."
 for d in devconfig.devlist.iterkeys():
     if 'init_state' in funcmap[d]: 

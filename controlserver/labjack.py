@@ -22,6 +22,15 @@ def init_comm():
     global chan_d
     chan_d['port'] = u6.U6()
 
+# init_comm initializes a dictionary with a thread-Rlock for processes associated with Labjack and the 
+# port corresponding to the first U6 device that can be found. The U6 class by default assumes a parameter
+# "FirstFound=True".
+# If there are multiple Labjack U6 devices that are connected, then the library U6 has a function "OpenAllU6"
+# which returns a dictionary where the keys are serial numbers of the devices and values are the corresponding
+# device objects
+# If there are a tandem of devices that are connected, then we can look at specific functions present in each
+# corresponding device library, or the function "listALL" present in LabjackPython module can be used.
+
 
 from bidict import bidict
 class Switch():
