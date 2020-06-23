@@ -143,4 +143,4 @@ class analog_mfc():
         return 'OK', [repr(self.fs_range)]
 
 
-
+## We need to define a new class for the LJTickDAC.
