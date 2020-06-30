@@ -79,12 +79,26 @@ class Switch():
 # setup for read/write of analog channels
 # see help(u6.AIN24) for explanation.
 _gain_index = 0 # 1X
+## Gain sets the range for the AIN.
+## Gain values of x1, x10, x100 and x1000 correspond to ranges +-10, +-1, +-0.1 and +-0.01V respectively.
 _res_index = 1 # high speed ADC
+## Resolution index as the name suggests is an index to quantify the voltage resolution.
+## Higher the Resolution index higher the voltage resolution, lower the noise at the cost of increased sample times
+
 _settling_factor = 0 # auto 
-_differential_inp = False # since we measure w.r.t. gnd, which is also
-# common to the setpoint voltage (through DACs)
+## The settling registers set the time from a step change in the input signal to when the signal is sampled
+## by the ADC, as measured in us. In general, more settling time is required as gain and resolution are increased
+## "Auto" settling ensures that the device meets specifications at any gain and resolution.
+_differential_inp = False 
+# Specifies if the reference voltage is w.r.t ground (False) or w.r.t another AIN
+# We measure w.r.t. gnd, which is also common to the setpoint voltage (through DACs)
+
+
+################################################################################################
 _ranges = [20, 2, 0.2, 0.02]
 _strranges = ['+- 10V', '+- 1V', '+- 0.1V', '+- 0.01V']
+## These two variables are not referenced anywhere else on this scipt. Need to ensure their role before deleting
+###################################################################################################3
 
 def _get_AIN(board, ain_num):
     #res = board.getFeedback(u6.AIN24(ain_num, _res_index, _gain_index, _settling_factor, _differential_inp))
@@ -94,6 +108,10 @@ def _get_AIN(board, ain_num):
     except u6.LabJackException:
         init_comm()
         return 0.0
+
+## function getFeedback is a function that is part of class U6 (and probably also present in other Labjac devices)
+## Essentially getFeedback accepts a commandlist and sends to the respective board and returs with the response
+## getAIN is also 
 
 def _set_DAC_output(board, dac_num, volts):
     # scale volts to bits:
@@ -143,4 +161,9 @@ class analog_mfc():
         return 'OK', [repr(self.fs_range)]
 
 
-## We need to define a new class for the LJTickDAC.
+## Some Analog MFC's are connected to directly to an Analog IO port on U6, while some are connected through LJTIckDAC
+## Devconfig file will be updated with the corresponding device to which the MFCs will be connected.
+## Existing communication to the U6 board is through the getFeedback routine which calls the "_WriteRead" routine
+## in LabjackPython which I think implements a Modbus protocol
+## However, LJTick-DACs in examples use i2C protocol. It remains to be seen if we can use both protocols in tandem
+
