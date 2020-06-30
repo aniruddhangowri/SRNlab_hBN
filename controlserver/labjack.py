@@ -135,7 +135,7 @@ def _set_DAC_output(board, dac_num, volts):
     except u6.LabJackException: init_comm()
 
 class analog_mfc():
-    name, in_id, out_id = None, None, None
+    name,dev,in_id,out_id = None, None, None, None
     max_volt = 5.0 # depends on MFC's analog input range, normally 5.0 V.
     fs_range, curr_setp, actv_flow = None, 0.0, 0.0
     
@@ -184,5 +184,99 @@ class analog_mfc():
 ## Existing communication to the U6 board is through the getFeedback routine which calls the "_WriteRead" routine
 ## in LabjackPython.
 ## However, LJTick-DACs in examples use i2C protocol using the i2c routine as part of U6 whcih in turn
-## also calls the "_WriteRead" routine. It needs to be ensured that two don't clash.
+## also calls the "_WriteRead" routine. It needs to be ensured that both don't clash with each other.
 
+import struct
+
+## Each LJTick has two output analog ports. Therefore for each LJTick, we will have two MFC connected to each 
+## of the output.
+## The output from the MFC will connected to one of the AIN ports of U6 itself. Therefore, class LJTickDAC
+## also inherits class analog_mfc.
+## Only the set_flow routine will be modified as a polymorphism.
+
+## class LJTickDAC has been adapted from the LJTickDAC.py example from the official labjackpython github repo.
+## Communication to the DAC is mediated by U6 through i2c protocol.
+
+class LJTickDAC(analog_mfc):
+    """Updates DACA and DACB on a LJTick-DAC connected to a U3, U6 or UE9."""
+    EEPROM_ADDRESS = 0x50
+    DAC_ADDRESS = 0x12
+    DAC_Out={'A',48,'B',49}
+    # Dictionary to distinguish output channels DACA and DACB. The values corresponding are not clear,
+    # but are used in the i2c statement. Therefore it has been set as the out_id.
+    def __init__(self, name, LJdev, dioPin, aio_in, aio_out):
+        """device: The object to an opened U3, U6 or UE9.
+        dioPin: The digital I/O line that the LJTick-DAC's DIOA is connected to.
+
+        """
+        super().__init__(name,LJdev,aio_in,DAC_out[aio_out])
+        ## Using the analog_mfc init function to initialize the necessary fields
+
+        # The pin numbers for the I2C command-response
+        self.sclPin = dioPin
+        self.sdaPin = self.sclPin + 1
+
+        self.getCalConstants(aio_out)
+
+
+    def toDouble(self, buff):
+        """Converts the 8 byte array into a floating point number.
+        buff: An array with 8 bytes.
+
+        """
+        right, left = struct.unpack("<Ii", struct.pack("B" * 8, *buff[0:8]))
+        return float(left) + float(right)/(2**32)
+
+    def getCalConstants(self,aio_out):
+        """Loads or reloads the calibration constants for the LJTick-DAC.
+        See datasheet for more info.
+
+        """
+        data = chan_d['port'][self.dev].i2c(LJTickDAC.EEPROM_ADDRESS, [64],
+                               NumI2CBytesToReceive=36, SDAPinNum=self.sdaPin,
+                               SCLPinNum=self.sclPin)
+        response = data['I2CBytes']
+
+        if aio_out=='A':
+            self.slope = self.toDouble(response[0:8])
+            self.offset = self.toDouble(response[8:16])
+        elif aio_out=='B'
+            self.slope = self.toDouble(response[16:24])
+            self.offset = self.toDouble(response[24:32])
+        else:
+            msg=f"Wrong analog output port specified on LJTick-DAC for device {self.name}.\
+             Please modify the appropriate field in devconfig"
+             raise Exception(msg)
+
+        if 255 in response:
+            msg = "LJTick-DAC calibration constants seem off. Check that the " \
+                  "LJTick-DAC is connected properly."
+            raise Exception(msg)
+
+        ## calibration data stored only for corresponding channel.
+
+    def update(self, volt):
+        """Updates the voltages on the LJTick-DAC.
+
+        """
+        binaryA = int(volt*self.slope + self.offset)
+        with chan_d['lock']:
+            chan_d['port'][self.dev].i2c(LJTickDAC.DAC_ADDRESS,
+                        [self.out_id, binaryA // 256, binaryA % 256],
+                        SDAPinNum=self.sdaPin, SCLPinNum=self.sclPin)
+
+
+    ## With the lock secured, communiation to the corresponding DAC is initiated. Voltage values 
+    ## will be supplied from the set_flow routine.
+    ## set_flow will be defined inside LJTickDAC class as a polymorphism.
+
+    def set_flow(self, args):
+        s=float(args[0])
+        if 0 <= s <= self.fs_range:
+            self.update(self._sccm2volt(s))
+            self.curr_setp = s
+            return 'OK', [repr(s)]
+        else: return 'Error', ['Flow is beyond range(0, %f'%(self.fs_range)+'): '+args[0]]
+
+    ## set_flow routine defined in LJTickDAC will essentially call the update function, passing along the
+    ## voltage as an argument.
