@@ -47,8 +47,9 @@ for k, v in devconfig.devlist.iteritems():
 # funcmap is a dictionary of the all components (MFCs, SW etc) associated with the all the functions
 # corresponding to it.
 # There is a seperate function, "funcmap" that is present in each of the connection libraries
-# For each device present in devconfig.devlist, funcmap creates a new class instances for the corresponding
-# connenction protocol and returs a dictionary of the assoicated functions for control.
+# For each device present in devconfig.devlist, funcmap creates a new class instances for each port on U6
+# It is assumed that only one U6 is connected. Eventually, when multiple labjack devices are connected then
+# each class should also have a handle for the corresponding device
 
 
 print "\n\tReading configuration from devconfig.py and initialising the devices."

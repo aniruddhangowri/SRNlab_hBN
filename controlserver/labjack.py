@@ -30,7 +30,8 @@ def init_comm():
 # device objects
 # If there are a tandem of devices that are connected, then we can look at specific functions present in each
 # corresponding device library, or the function "listALL" present in LabjackPython module can be used.
-
+# Here chan_d['port'] is a global handle and accessed by all the class instances. Implementing multiple 
+# labjack devices would require specifying the handle inside of the class definition itself.
 
 from bidict import bidict
 class Switch():
@@ -97,8 +98,8 @@ _differential_inp = False
 ################################################################################################
 _ranges = [20, 2, 0.2, 0.02]
 _strranges = ['+- 10V', '+- 1V', '+- 0.1V', '+- 0.01V']
-## These two variables are not referenced anywhere else on this scipt. Need to ensure their role before deleting
-###################################################################################################3
+## These two variables are not referenced anywhere else on this scipt. Unsure of their role.
+###################################################################################################
 
 def _get_AIN(board, ain_num):
     #res = board.getFeedback(u6.AIN24(ain_num, _res_index, _gain_index, _settling_factor, _differential_inp))
@@ -111,7 +112,10 @@ def _get_AIN(board, ain_num):
 
 ## function getFeedback is a function that is part of class U6 (and probably also present in other Labjac devices)
 ## Essentially getFeedback accepts a commandlist and sends to the respective board and returs with the response
-## getAIN is also 
+## getAIN also uses getFeedback to communicate with the device (U6) using the "AIN24AR" module.
+## This function essentially sets the parameters set earlier to be used by the Analog input port.
+## For any analog input from a MFC (for example) connected to an AIN port, this function is executed inside
+## "analog_mfc" class to read data from the MFC.
 
 def _set_DAC_output(board, dac_num, volts):
     # scale volts to bits:
@@ -163,7 +167,9 @@ class analog_mfc():
 
 ## Some Analog MFC's are connected to directly to an Analog IO port on U6, while some are connected through LJTIckDAC
 ## Devconfig file will be updated with the corresponding device to which the MFCs will be connected.
+## A separate labjack device will house all the switches.
 ## Existing communication to the U6 board is through the getFeedback routine which calls the "_WriteRead" routine
-## in LabjackPython which I think implements a Modbus protocol
-## However, LJTick-DACs in examples use i2C protocol. It remains to be seen if we can use both protocols in tandem
+## in LabjackPython.
+## However, LJTick-DACs in examples use i2C protocol using the i2c routine as part of U6 whcih in turn
+## also calls the "_WriteRead" routine. It needs to be ensured that two don't clash.
 
