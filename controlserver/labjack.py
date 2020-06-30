@@ -13,14 +13,21 @@ def funcmap(devname, devid):
 
 import threading
 import u6
+import u3
 # below LabJackException is handled only for initializing the lj handle.
 # This exception was occurring when there was a spike in powerline, and
 # the U6() handle became invalid due to that.
 #
-chan_d = {'lock': threading.RLock(), 'port': None}
+chan_d = {'lock': threading.RLock(), 'port': {}}
 def init_comm():
     global chan_d
-    chan_d['port'] = u6.U6()
+    chan_d['port']['U6'] = u6.U6()
+    chan_d['port']['U3'] = u3.U3()
+
+# Redifined chan_d['port'] as a dictionary with a U6 and U3 device object as the values
+# It is assumed here that there are only one U6 and U3 device connected.
+# If multiple U6's are connected for example, then the routine "OpenALlU6" can be used which itself would return
+# a dictionary
 
 # init_comm initializes a dictionary with a thread-Rlock for processes associated with Labjack and the 
 # port corresponding to the first U6 device that can be found. The U6 class by default assumes a parameter
@@ -39,8 +46,11 @@ class Switch():
     def_st, curr_st = 'noflow', None
     _onoff = bidict({'noflow':0, 'flow':1})
 
-    def __init__(self, name, dio_num):
+    def __init__(self, name, LJdev, dio_num):
         self.name = name
+        self.dev=LJdev
+        ## Created a new variable which will hold the device object key to which it is connected
+        ## Using the key in chan_d['port'] should return the corresponding device objects
         self.num = dio_num
     def init_state(self, args): #def_st, curr_st):
         if args['default'] == 'flow': 
@@ -53,7 +63,7 @@ class Switch():
     
     def get_state(self, args):
         with chan_d['lock']:
-            try: r = chan_d['port'].getDIOState(self.num)
+            try: r = chan_d['port'][self.dev].getDIOState(self.num)
             except u6.LabJackException: init_comm()
         print r
         self.curr_st = self._onoff[:r]
@@ -64,14 +74,14 @@ class Switch():
         if st not in self._onoff.keys(): return 'Error', ['Invalid requested state: '+st]
         #if st == self.curr_st: return 'OK', [st] # do it anyway for now.
         with chan_d['lock']:
-            try: r = chan_d['port'].setDIOState(self.num, self._onoff[st])
+            try: r = chan_d['port'][self.dev].setDIOState(self.num, self._onoff[st])
             except u6.LabJackException: init_comm()
         self.curr_st = st
         return 'OK', [st]
 
     def set_def_state(self, args):
         with chan_d['lock']:
-            try: r = chan_d['port'].setDIOState(self.num, self._onoff[self.def_st])
+            try: r = chan_d['port'][self.dev].setDIOState(self.num, self._onoff[self.def_st])
             except u6.LabJackException: init_comm()
         self.curr_st = self.def_st
         return 'OK', [self.def_st]
@@ -129,10 +139,13 @@ class analog_mfc():
     max_volt = 5.0 # depends on MFC's analog input range, normally 5.0 V.
     fs_range, curr_setp, actv_flow = None, 0.0, 0.0
     
-    def __init__(self, name, aio_in, aio_out):
+    def __init__(self, name, LJdev, aio_in, aio_out):
         self.name = name
+        self.dev=LJdev
+        ## Created a new variable which will hold the device object key (which is a string) to which it is connected
+        ## Using the key in chan_d['port'] should return the corresponding device objects
         self.in_id, self.out_id = aio_in, aio_out
-        chan_d['port'].getCalibrationData()
+        chan_d['port'][self.dev].getCalibrationData()
     
     def init_state(self, args): #fs_range, initial_setp):
         self.fs_range, self.curr_setp = args['fs_range'], args['init_val']
@@ -145,7 +158,7 @@ class analog_mfc():
 
     def get_flow(self, args):
         with chan_d['lock']:
-            r = _get_AIN(chan_d['port'], self.in_id)
+            r = _get_AIN(chan_d['port'][self.dev], self.in_id)
         self.actv_flow = self._volt2sccm(r)
         return 'OK', ['%.3f'%(self.actv_flow)]
     
@@ -153,7 +166,7 @@ class analog_mfc():
         s = float(args[0])
         if 0 <= s <= self.fs_range:
             with chan_d['lock']:
-                r = _set_DAC_output(chan_d['port'], self.out_id, self._sccm2volt(s))
+                r = _set_DAC_output(chan_d['port'][self.dev], self.out_id, self._sccm2volt(s))
             self.curr_setp = s
             return 'OK', [repr(s)]
         else: return 'Error', ['Flow is beyond range(0, %f'%(self.fs_range)+'): '+args[0]]
