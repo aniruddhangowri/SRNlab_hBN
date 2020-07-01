@@ -1,6 +1,11 @@
 def funcmap(devname, devid):
     if devid[0]=='AIO':
-        m = analog_mfc(devname, devid[1], devid[2])
+        m = analog_mfc(devname, devid[1], devid[2], devid[3])
+        c = {'init_state': m.init_state, 'get_flow': m.get_flow, 'set_flow': m.set_flow, 
+                'get_curr_setp': m.get_curr_setp, 'get_fs_range': m.get_fs_range, 'handle': m}
+        return c
+    if devid[0]=='AIO-DAC':
+        m = LJTickDAC(devname, devid[1], devid[2], devid[3], devid[4])
         c = {'init_state': m.init_state, 'get_flow': m.get_flow, 'set_flow': m.set_flow, 
                 'get_curr_setp': m.get_curr_setp, 'get_fs_range': m.get_fs_range, 'handle': m}
         return c
@@ -31,8 +36,11 @@ def init_comm():
     global chan_d
     chan_d['port']['U6'] = u6.U6()
     chan_d['port']['U3'] = u3.U3()
+    chan_d['port']['U3'].configU3(FIOAnalog=0,EIOAnalog=0,FIODirection=0,EIODirection=0)
     ## We assume that U3 houses all the switches using a PS12DC. Therefore all the flexible IO lines (FIO and EIO)
     ## need to be configured to be digital.
+    ## The arguments Analog and Direction are binary encoded 8-bit values with each bit corresponding to a an 
+    ## individual port.
     ## U3 class provides an in-built routine "configU3" which can be used for this purpose.
 
 # Redifined chan_d['port'] as a dictionary with a U6 and U3 device object as the values
@@ -189,37 +197,36 @@ class analog_mfc():
         return 'OK', [repr(self.fs_range)]
 
 
-## Some Analog MFC's are connected to directly to an Analog IO port on U6, while some are connected through LJTIckDAC
-## Devconfig file will be updated with the corresponding device to which the MFCs will be connected.
-## A separate labjack device will house all the switches.
-## Existing communication to the U6 board is through the getFeedback routine which calls the "_WriteRead" routine
-## in LabjackPython.
-## However, LJTick-DACs in examples use i2C protocol using the i2c routine as part of U6 whcih in turn
-## also calls the "_WriteRead" routine. It needs to be ensured that both don't clash with each other.
+""" Some Analog MFC's are connected to directly to an Analog IO port on U6, while some are connected through LJTIckDAC
+Devconfig file will be updated with the corresponding device to which the MFCs will be connected.
+A separate labjack device will house all the switches.
+Existing communication to the U6 board is through the getFeedback routine which calls the "_WriteRead" routine
+in LabjackPython.
+However, LJTick-DACs hasn been configured to use i2C protocol using the i2c routine as part of U6 
+The program host communicates with U6 via USB and U6 in turn communicates to LJTick-DAC using i2C.
+As per the datasheet, i2c in U6 is an exclusive master only implementation.
+Therefore, there should not be any issues with communicating using i2c."""
 
 import struct
 
-## Each LJTick has two output analog ports. Therefore for each LJTick, we will have two MFC connected to each 
-## of the output.
-## The output from the MFC will connected to one of the AIN ports of U6 itself. Therefore, class LJTickDAC
-## also inherits class analog_mfc.
-## Only the set_flow routine will be modified as a polymorphism.
+""" Each LJTick has two output analog ports. Therefore for each LJTick, we will have two MFC connected to each 
+ of the output.
+ The output from the MFC will connected to one of the AIN ports of U6 itself. Therefore, class LJTickDAC
+ also inherits class analog_mfc.
+ Only the set_flow routine will be modified as a polymorph."""
 
-## class LJTickDAC has been adapted from the LJTickDAC.py example from the official labjackpython github repo.
-## Communication to the DAC is mediated by U6 through i2c protocol.
+""" class LJTickDAC has been adapted from the LJTickDAC.py example from the official labjackpython github repo.
+ Communication to the DAC is mediated by U6 through i2c protocol."""
 
 class LJTickDAC(analog_mfc):
-    """Updates DACA and DACB on a LJTick-DAC connected to a U3, U6 or UE9."""
+    """Class to control LJTick-DAC outputs connected to a Labjack device"""
     EEPROM_ADDRESS = 0x50
     DAC_ADDRESS = 0x12
     DAC_Out={'A',48,'B',49}
     # Dictionary to distinguish output channels DACA and DACB. The values corresponding are not clear,
     # but are used in the i2c statement. Therefore it has been set as the out_id.
     def __init__(self, name, LJdev, dioPin, aio_in, aio_out):
-        """device: The object to an opened U3, U6 or UE9.
-        dioPin: The digital I/O line that the LJTick-DAC's DIOA is connected to.
-
-        """
+        """LJdev corresponds to key of a Labjack device"""
         super().__init__(name,LJdev,aio_in,DAC_out[aio_out])
         ## Using the analog_mfc init function to initialize the necessary fields
 
