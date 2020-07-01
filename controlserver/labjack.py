@@ -41,6 +41,8 @@ chan_d = {'lock': threading.RLock(), 'port': {}}
 # Therefore, it should not cause a problem when called from U6 or U3. However, if it causes problems, then
 # there might be a need to call LabjackException specifically from corresponding module.
 
+"""Ideally, we can define two threading-Rlocks, one for each Labjack devices. """
+
 def init_comm():
     global chan_d
     chan_d['port']['U6'] = u6.U6()
@@ -182,7 +184,9 @@ class analog_mfc():
 
     def get_flow(self, args):
         with chan_d['lock']:
-            r = _get_AIN(chan_d['port'][self.dev], self.in_id)
+            try: r = _get_AIN(chan_d['port'][self.dev], self.in_id)
+            except u6.LabJackException: init_comm()
+        # Modified this routine to handle LabjackException
         self.actv_flow = self._volt2sccm(r)
         return 'OK', ['%.3f'%(self.actv_flow)]
     
@@ -285,15 +289,16 @@ class LJTickDAC(analog_mfc):
         binaryA = int(volt*self.slope + self.offset)
 
         with chan_d['lock']:
-            chan_d['port'][self.dev].i2c(LJTickDAC.DAC_ADDRESS,
+            try: chan_d['port'][self.dev].i2c(LJTickDAC.DAC_ADDRESS,
                         [self.out_id, binaryA // 256, binaryA % 256],
                         SDAPinNum=self.sdaPin, SCLPinNum=self.sclPin)
+            except u6.LabjackException: init_comm()
 
 
     """ With the lock secured, communiation to the corresponding DAC is initiated. This is essential since
         LJTick-DAC can only update one of the outputs at any given time.
         Voltage values will be supplied from the set_flow routine.
-        Exception handling should be implemented here to ensure there isn't any errors.
+        Exception handling has been implemented here to ensure there isn't any errors.
         set_flow will be defined inside LJTickDAC class as a polymorph. """
 
     def set_flow(self, args):
