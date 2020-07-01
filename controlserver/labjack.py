@@ -19,15 +19,26 @@ import u3
 # the U6() handle became invalid due to that.
 #
 chan_d = {'lock': threading.RLock(), 'port': {}}
+
+#module = {'U3':U3,'U6':U6}
+## Module is for the explicit purpose of LabjackException handling.
+## LabjackException is a class defined in LabjackPython module which is turn inherits the exception class.
+## U6 module has imported the LabjackException from LabjackPython and does not seem to added or modified it.
+# Therefore, it should not cause a problem when called from U6 or U3. However, if it causes problems, then
+# there might be a need to call LabjackException specifically from corresponding module.
+
 def init_comm():
     global chan_d
     chan_d['port']['U6'] = u6.U6()
     chan_d['port']['U3'] = u3.U3()
+    ## We assume that U3 houses all the switches using a PS12DC. Therefore all the flexible IO lines (FIO and EIO)
+    ## need to be configured to be digital.
+    ## U3 class provides an in-built routine "configU3" which can be used for this purpose.
 
 # Redifined chan_d['port'] as a dictionary with a U6 and U3 device object as the values
 # It is assumed here that there are only one U6 and U3 device connected.
 # If multiple U6's are connected for example, then the routine "OpenALlU6" can be used which itself would return
-# a dictionary
+# a dictionary.
 
 # init_comm initializes a dictionary with a thread-Rlock for processes associated with Labjack and the 
 # port corresponding to the first U6 device that can be found. The U6 class by default assumes a parameter
@@ -260,6 +271,7 @@ class LJTickDAC(analog_mfc):
 
         """
         binaryA = int(volt*self.slope + self.offset)
+
         with chan_d['lock']:
             chan_d['port'][self.dev].i2c(LJTickDAC.DAC_ADDRESS,
                         [self.out_id, binaryA // 256, binaryA % 256],
