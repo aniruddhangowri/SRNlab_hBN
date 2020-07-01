@@ -3,16 +3,25 @@ def funcmap(devname, devid):
         m = analog_mfc(devname, devid[1], devid[2], devid[3])
         c = {'init_state': m.init_state, 'get_flow': m.get_flow, 'set_flow': m.set_flow, 
                 'get_curr_setp': m.get_curr_setp, 'get_fs_range': m.get_fs_range, 'handle': m}
+        """ devid[1] - Labjack device (U6 or U3)
+            devid[2] - aio_in pin
+            devid[3] - aio_out pin """
         return c
     if devid[0]=='AIO-DAC':
         m = LJTickDAC(devname, devid[1], devid[2], devid[3], devid[4])
         c = {'init_state': m.init_state, 'get_flow': m.get_flow, 'set_flow': m.set_flow, 
                 'get_curr_setp': m.get_curr_setp, 'get_fs_range': m.get_fs_range, 'handle': m}
+        """ devid[1] - Labjack device (U6 or U3)
+            devid[2] - dio_pin to which SCL pin of LJTick-DAC is connected
+            devid[3] - aio_in pin
+            devid[4] - aio_out (A or B) """
         return c
     if devid[0]=='DIO':
-        sw = Switch(devname, devid[1])
+        sw = Switch(devname, devid[1], devid[2])
         c = {'init_state': sw.init_state, 'get_state': sw.get_state, 'set_state': sw.set_state, 
                 'set_def_state': sw.set_def_state, 'handle': sw }
+        """ devid[1] - Labjack device (U6 or U3)
+            devid[2] - dio pin """
         return c
 
 
@@ -43,21 +52,17 @@ def init_comm():
     ## individual port.
     ## U3 class provides an in-built routine "configU3" which can be used for this purpose.
 
-# Redifined chan_d['port'] as a dictionary with a U6 and U3 device object as the values
-# It is assumed here that there are only one U6 and U3 device connected.
-# If multiple U6's are connected for example, then the routine "OpenALlU6" can be used which itself would return
-# a dictionary.
+""" init_comm initializes a dictionary with a thread-Rlock for processes associated with this module Labjack
+    associated with U6 and U3 connected. 
+    Redifined chan_d['port'] as a dictionary with a U6 and U3 device object 
+    as the values. It is assumed here that there are only one U6 and U3 device connected.
+    If multiple U6's are connected for example, then the routine "OpenALlU6" can be used which itself would return
+    a dictionary. """
 
-# init_comm initializes a dictionary with a thread-Rlock for processes associated with Labjack and the 
-# port corresponding to the first U6 device that can be found. The U6 class by default assumes a parameter
-# "FirstFound=True".
-# If there are multiple Labjack U6 devices that are connected, then the library U6 has a function "OpenAllU6"
-# which returns a dictionary where the keys are serial numbers of the devices and values are the corresponding
-# device objects
-# If there are a tandem of devices that are connected, then we can look at specific functions present in each
-# corresponding device library, or the function "listALL" present in LabjackPython module can be used.
-# Here chan_d['port'] is a global handle and accessed by all the class instances. Implementing multiple 
-# labjack devices would require specifying the handle inside of the class definition itself.
+""" If there are a tandem of devices that are connected, then we can look at specific functions present in each
+    corresponding device library, or the function "listALL" present in LabjackPython module can be used.
+    Here chan_d['port'] is a global handle and accessed by all the class instances. Implementing multiple 
+    labjack devices would require specifying the handle inside of the class definition itself. """
 
 from bidict import bidict
 class Switch():
@@ -273,7 +278,7 @@ class LJTickDAC(analog_mfc):
 
         ## calibration data stored only for corresponding channel.
 
-    def update(self, volt):
+    def dacupdate(self, volt):
         """Updates the voltages on the LJTick-DAC.
 
         """
@@ -285,17 +290,20 @@ class LJTickDAC(analog_mfc):
                         SDAPinNum=self.sdaPin, SCLPinNum=self.sclPin)
 
 
-    ## With the lock secured, communiation to the corresponding DAC is initiated. Voltage values 
-    ## will be supplied from the set_flow routine.
-    ## set_flow will be defined inside LJTickDAC class as a polymorphism.
+    """ With the lock secured, communiation to the corresponding DAC is initiated. This is essential since
+        LJTick-DAC can only update one of the outputs at any given time.
+        Voltage values will be supplied from the set_flow routine.
+        Exception handling should be implemented here to ensure there isn't any errors.
+        set_flow will be defined inside LJTickDAC class as a polymorph. """
 
     def set_flow(self, args):
         s=float(args[0])
         if 0 <= s <= self.fs_range:
-            self.update(self._sccm2volt(s))
+            self.dacupdate(self._sccm2volt(s))
             self.curr_setp = s
             return 'OK', [repr(s)]
         else: return 'Error', ['Flow is beyond range(0, %f'%(self.fs_range)+'): '+args[0]]
 
-    ## set_flow routine defined in LJTickDAC will essentially call the update function, passing along the
-    ## voltage as an argument.
+    """ set_flow routine defined in LJTickDAC will essentially call the update function, passing along the
+        voltage as an argument. """
+
