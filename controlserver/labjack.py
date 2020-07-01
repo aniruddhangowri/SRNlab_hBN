@@ -34,14 +34,15 @@ import u3
 #
 chan_d = {'lock': threading.RLock(), 'port': {}}
 
-#module = {'U3':U3,'U6':U6}
+"""Ideally, we can define two threading-Rlocks, one for each Labjack devices. """
+
+#module = {'U3':u3,'U6':u6}
 ## Module is for the explicit purpose of LabjackException handling.
 ## LabjackException is a class defined in LabjackPython module which is turn inherits the exception class.
-## U6 module has imported the LabjackException from LabjackPython and does not seem to added or modified it.
+## U6 module has imported the LabjackException from LabjackPython and does not seem to have added to or modified it.
 # Therefore, it should not cause a problem when called from U6 or U3. However, if it causes problems, then
 # there might be a need to call LabjackException specifically from corresponding module.
 
-"""Ideally, we can define two threading-Rlocks, one for each Labjack devices. """
 
 def init_comm():
     global chan_d
