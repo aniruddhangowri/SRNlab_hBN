@@ -1,9 +1,52 @@
+"""
+Overview of Labjack module
+--------------------------------------------------------------------------------------------------------------
+03/07/2020 - Overview created
+
+The primary goal of the labjack module is to provide an interface to Labjack devices and peripherials connected
+thereof. 
+Peripherials connected to Labjack are either solenoid valves (sw) which use DIO ports or MKS Mass-Flow-controllers
+(MFC) which are analog devices and require an analog output and input ports.
+Please refer to reactor schematic and connection schematic for more info on how connections are established.
+Essentially, all digital IO are handled by Labjack U3 and all analog communication are handled by Labjack U6.
+Please refer U3 and U6 datasheets from Labjack website for detailed information.
+Analog outputs in U6 are limited to two ports DAC1 and DAC2. Therefore, LJTick-DAC accessory was used to increase
+analog output ports to 10 + 2 (in-built).
+Each LJTick-DAC has 4 pins which connects to two DIO ports (one for SCL and one for SDA) the rest connected
+to Vs and GND.
+Each LJTick-DAC has two analog output ports DACA and DACB which can be independently controlled.
+Once again, please refer LJTick-DAC datasheet available from Labjack website.
+Communication to LJTick-DAC is mediated by U6 through I2C communication protocol.
+
+If you would like a vivid understanding, think of LJTick-DAC as an external black-box to which you are communicating
+through U6 using the DIO ports. This understanding will be essential later on.
+
+For each MFC connected using LJTick-DAC (connected to some specific DIO on U6) the output will be one 
+of DACA or DACB. The analog input from MFC will be connected to any AIN port as part of U6. Therefore, for
+every MFC connected through LJTick-DAC, there will be a DIO_pin, aio_out and aio_in as defined in devconfig.
+If the MFC is just connected through the built-in analog output, there will be only an aio_out and aio_in.
+
+All sw's are connected to U3 using the PS12DC module which is connected to the DB15 connector on U3.
+You should refer the U3 datasheet for pin information on the DB15.
+Additionally, it has to be noted that the ports FIO and EIO in U3 are flexible IO ports. It means that they can 
+be configured to be a digital IO port or an analog IN port. 
+As of this documentation, the analog output ports DAC0 and DAC1 on U3 are not assigned.
+
+If you intend to modify any of the script, please update this section with date and the modification carried out.
+and a humble advice.... If it ain't broke, don't fix it.
+
+
+"""
+
+
+
+
 def funcmap(devname, devid):
     if devid[0]=='AIO':
         m = analog_mfc(devname, devid[1], devid[2], devid[3])
         c = {'init_state': m.init_state, 'get_flow': m.get_flow, 'set_flow': m.set_flow, 
                 'get_curr_setp': m.get_curr_setp, 'get_fs_range': m.get_fs_range, 'handle': m}
-        """ devid[1] - Labjack device (U6 or U3)
+        """ devid[1] - Labjack device key (for calling chan_d['port'])
             devid[2] - aio_in pin
             devid[3] - aio_out pin """
         return c
@@ -11,7 +54,7 @@ def funcmap(devname, devid):
         m = LJTickDAC(devname, devid[1], devid[2], devid[3], devid[4])
         c = {'init_state': m.init_state, 'get_flow': m.get_flow, 'set_flow': m.set_flow, 
                 'get_curr_setp': m.get_curr_setp, 'get_fs_range': m.get_fs_range, 'handle': m}
-        """ devid[1] - Labjack device (U6 or U3)
+        """ devid[1] - Labjack device key (for calling chan_d['port'])
             devid[2] - dio_pin to which SCL pin of LJTick-DAC is connected
             devid[3] - aio_in pin
             devid[4] - aio_out (A or B) """
@@ -20,7 +63,7 @@ def funcmap(devname, devid):
         sw = Switch(devname, devid[1], devid[2])
         c = {'init_state': sw.init_state, 'get_state': sw.get_state, 'set_state': sw.set_state, 
                 'set_def_state': sw.set_def_state, 'handle': sw }
-        """ devid[1] - Labjack device (U6 or U3)
+        """ devid[1] - Labjack device key (for calling chan_d['port'])
             devid[2] - dio pin """
         return c
 
@@ -34,7 +77,11 @@ import u3
 #
 chan_d = {'lock': threading.RLock(), 'port': {}}
 
-"""Ideally, we can define two threading-Rlocks, one for each Labjack devices. """
+##Ideally, we can define two threading-Rlocks, one for each Labjack devices.
+
+""" chan_d['port'] has been modified to be a dictionary from being a None type object. Essentially device objects
+corresponding to the various Labjack devices that may be connected are presented as a dictionary with an appropriate
+key to uniquiely identify them. This key has to be defined in devconfig file. """
 
 #module = {'U3':u3,'U6':u6}
 ## Module is for the explicit purpose of LabjackException handling.
@@ -62,7 +109,7 @@ def init_comm():
     If multiple U6's are connected for example, then the routine "OpenALlU6" can be used which itself would return
     a dictionary. """
 
-""" If there are a tandem of devices that are connected, then we can look at specific functions present in each
+""" If there are a tandem of devices that are connected, then one has to look at specific functions present in each
     corresponding device library, or the function "listALL" present in LabjackPython module can be used.
     Here chan_d['port'] is a global handle and accessed by all the class instances. Implementing multiple 
     labjack devices would require specifying the handle inside of the class definition itself. """
@@ -76,8 +123,9 @@ class Switch():
     def __init__(self, name, LJdev, dio_num):
         self.name = name
         self.dev=LJdev
-        ## Created a new variable which will hold the device object key to which it is connected
-        ## Using the key in chan_d['port'] should return the corresponding device objects
+        """ Created a new variable which will hold the device object key to which it is connected
+        Using the key in chan_d['port'] should return the corresponding device objects
+        chan_d['port'] has been replaced with chan_d['port']['self.dev'] """
         self.num = dio_num
     def init_state(self, args): #def_st, curr_st):
         if args['default'] == 'flow': 
@@ -93,6 +141,7 @@ class Switch():
             try: r = chan_d['port'][self.dev].getDIOState(self.num)
             except u6.LabJackException: init_comm()
         print r
+        # Not sure where this gets printed??
         self.curr_st = self._onoff[:r]
         return 'OK', [self.curr_st]
 
@@ -106,6 +155,7 @@ class Switch():
         self.curr_st = st
         return 'OK', [st]
 
+    # Function to reset to default state.    
     def set_def_state(self, args):
         with chan_d['lock']:
             try: r = chan_d['port'][self.dev].setDIOState(self.num, self._onoff[self.def_st])
@@ -160,6 +210,9 @@ def _set_DAC_output(board, dac_num, volts):
     elif dac_num == 1: bits = int(board.calInfo.dac1Slope*volts + board.calInfo.dac1Offset)
     try: board.getFeedback(u6.DAC16(dac_num, bits))
     except u6.LabJackException: init_comm()
+
+""" _set_DAC_output is used inside analog_mfc class to set a voltage to one of two DACs
+    Function can be incorporated into analog_mfc class itself. Need to confirm if there might be any issues """
 
 class analog_mfc():
     name,dev,in_id,out_id = None, None, None, None
@@ -223,10 +276,11 @@ import struct
  of the output.
  The output from the MFC will connected to one of the AIN ports of U6 itself. Therefore, class LJTickDAC
  also inherits class analog_mfc.
- Only the set_flow routine will be modified as a polymorph."""
+ Only the set_flow routine will be modified as a polymorph.
+ Communication to the DAC is mediated by U6 through i2c protocol"""
 
 """ class LJTickDAC has been adapted from the LJTickDAC.py example from the official labjackpython github repo.
- Communication to the DAC is mediated by U6 through i2c protocol."""
+ Yeah.... I know it's lame."""
 
 class LJTickDAC(analog_mfc):
     """Class to control LJTick-DAC outputs connected to a Labjack device"""
@@ -299,8 +353,8 @@ class LJTickDAC(analog_mfc):
     """ With the lock secured, communiation to the corresponding DAC is initiated. This is essential since
         LJTick-DAC can only update one of the outputs at any given time.
         Voltage values will be supplied from the set_flow routine.
-        Exception handling has been implemented here to ensure there isn't any errors.
-        set_flow will be defined inside LJTickDAC class as a polymorph. """
+        set_flow will be defined inside LJTickDAC class as a polymorph.
+        Exception handling has been implemented here to ensure there isn't any errors. """
 
     def set_flow(self, args):
         s=float(args[0])
@@ -313,3 +367,13 @@ class LJTickDAC(analog_mfc):
     """ set_flow routine defined in LJTickDAC will essentially call the update function, passing along the
         voltage as an argument. """
 
+#============================================================================================================================
+
+
+
+
+
+
+"""
+
+"""
