@@ -139,7 +139,7 @@ sequence versus inverting the (k, v) pairs in a mapping).
 """
 
 import re
-from collections import MutableMapping
+from collections.abc import MutableMapping
 from functools import wraps
 
 class inverted(object):
@@ -190,7 +190,7 @@ class inverted(object):
         try:
             it = data.__inverted__
         except AttributeError:
-            return self.next()
+            return self.__next__()
         else:
             return it()
 

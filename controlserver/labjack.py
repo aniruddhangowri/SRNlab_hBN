@@ -75,13 +75,18 @@ import u3
 # This exception was occurring when there was a spike in powerline, and
 # the U6() handle became invalid due to that.
 #
-chan_d = {'lock': threading.RLock(), 'port': {}}
 
-##Ideally, we can define two threading-Rlocks, one for each Labjack devices.
+chan_d = {'U3':{'lock':threading.RLock(),'port':None}, 'U6':{'lock':threading.RLock(),'port':None}}
 
-""" chan_d['port'] has been modified to be a dictionary from being a None type object. Essentially device objects
-corresponding to the various Labjack devices that may be connected are presented as a dictionary with an appropriate
-key to uniquiely identify them. This key has to be defined in devconfig file. """
+#chan_d = {'lock': threading.RLock(), 'port': {}} >>>>>>> Modified on 14-Jul-20
+"""chan_d has been modified to hold two seperate threading-Rlocks, one for each Labjack devices.
+The new structure is a dictionary with the Labjack device identifier as the key whose value is another dictionary
+with a thread lock and corresponding device object as initialized in the routing init_comm() below.
+Thus chan_d enables interfacing multiple Labjack devices on seperate threads.
+In the future if the need arises to interface more than two Labjack device, then chan_d would just need a new 
+dictionary entry correesponding to it.
+Modifications to the code inside the classes have been made accordingly to reflect the structural changes."""
+
 
 #module = {'U3':u3,'U6':u6}
 ## Module is for the explicit purpose of LabjackException handling.
@@ -93,19 +98,25 @@ key to uniquiely identify them. This key has to be defined in devconfig file. ""
 
 def init_comm():
     global chan_d
-    chan_d['port']['U6'] = u6.U6()
-    chan_d['port']['U3'] = u3.U3()
-    chan_d['port']['U3'].configU3(FIOAnalog=0,EIOAnalog=0,FIODirection=0,EIODirection=0)
-    ## We assume that U3 houses all the switches using a PS12DC. Therefore all the flexible IO lines (FIO and EIO)
-    ## need to be configured to be digital.
-    ## The arguments Analog and Direction are binary encoded 8-bit values with each bit corresponding to a an 
-    ## individual port.
-    ## U3 class provides an in-built routine "configU3" which can be used for this purpose.
+    chan_d['U6']['port'] = u6.U6()
+    chan_d['U3']['port'] = u3.U3()
+    chan_d['U3']['port'].configU3(FIOAnalog=0,EIOAnalog=0,FIODirection=0,EIODirection=0)
+    """ We assume that U3 houses all the switches using a PS12DC. Therefore all the flexible IO lines (FIO and EIO)
+     need to be configured to be digital.
+     The arguments Analog and Direction are binary encoded 8-bit values with each bit corresponding to a an 
+     individual port.
+     U3 class provides an in-built routine "configU3" which can be used for this purpose.
+     For example, if we need to configure just FIO2 and FIO5 to be analog inputs with the rest being Digital IO.
+     This would correspond to a binary string, '01001000' whose integer value is 72. 
+     Therefore, FIOAnalog=72 should be passed on as the argument.
+     One can imagine the arguments FIOAnalog, EIOAnalog, FIODirection and EIODirection to be like registers.
+     In this case, we require all the IO's to be Digital outputs hence the value 0 for all the arguments.
+      """
 
-""" init_comm initializes a dictionary with a thread-Rlock for processes associated with this module Labjack
-    associated with U6 and U3 connected. 
-    Redifined chan_d['port'] as a dictionary with a U6 and U3 device object 
-    as the values. It is assumed here that there are only one U6 and U3 device connected.
+""" init_comm initializes the dictionary chan_d with a thread-Rlock for each Labjack device and the corresponding
+    device object as a seperate dictionary. 
+    It is assumed here that there are is only one U6 and U3 device connected. The code u6.U6() and u3.U3() assume
+    OpenFirstFound argument to be TRUE. Refer the U6.py or U3.py official module for better understanding.
     If multiple U6's are connected for example, then the routine "OpenALlU6" can be used which itself would return
     a dictionary. """
 
@@ -124,8 +135,9 @@ class Switch():
         self.name = name
         self.dev=LJdev
         """ Created a new variable which will hold the device object key to which it is connected
-        Using the key in chan_d['port'] should return the corresponding device objects
-        chan_d['port'] has been replaced with chan_d['port']['self.dev'] """
+        Using the key in chan_d should return the corresponding device objects along with a thread lock
+        The lock and the device objects are accessible through chan_d[self.dev]['lock'] and chan_d[self.dev]['port']
+        respectively. """
         self.num = dio_num
     def init_state(self, args): #def_st, curr_st):
         if args['default'] == 'flow': 
@@ -137,28 +149,30 @@ class Switch():
         self.curr_st = c
     
     def get_state(self, args):
-        with chan_d['lock']:
-            try: r = chan_d['port'][self.dev].getDIOState(self.num)
+        with chan_d[self.dev]['lock']:
+            try: r = chan_d[self.dev]['port'].getDIOState(self.num)
             except u6.LabJackException: init_comm()
-        print r
+        print (r)
         # Not sure where this gets printed??
         self.curr_st = self._onoff[:r]
         return 'OK', [self.curr_st]
 
     def set_state(self, args):
         st = args[0]
-        if st not in self._onoff.keys(): return 'Error', ['Invalid requested state: '+st]
+        if st not in self._onoff.keys() : return 'Error', ['Invalid requested state: '+st]
         #if st == self.curr_st: return 'OK', [st] # do it anyway for now.
-        with chan_d['lock']:
-            try: r = chan_d['port'][self.dev].setDIOState(self.num, self._onoff[st])
+        with chan_d[self.dev]['lock']:
+            #try: r = chan_d[self.dev]['port'].setDIOState(self.num, self._onoff[st]) //Unused variable r warning
+            try: chan_d[self.dev]['port'].setDIOState(self.num, self._onoff[st])
             except u6.LabJackException: init_comm()
         self.curr_st = st
         return 'OK', [st]
 
     # Function to reset to default state.    
     def set_def_state(self, args):
-        with chan_d['lock']:
-            try: r = chan_d['port'][self.dev].setDIOState(self.num, self._onoff[self.def_st])
+        with chan_d[self.dev]['lock']:
+            #try: r = chan_d[self.dev]['port'].setDIOState(self.num, self._onoff[self.def_st]) /// Unused variable warning
+            try: chan_d[self.dev]['port'].setDIOState(self.num, self._onoff[self.def_st])
             except u6.LabJackException: init_comm()
         self.curr_st = self.def_st
         return 'OK', [self.def_st]
@@ -225,7 +239,7 @@ class analog_mfc():
         ## Created a new variable which will hold the device object key (which is a string) to which it is connected
         ## Using the key in chan_d['port'] should return the corresponding device objects
         self.in_id, self.out_id = aio_in, aio_out
-        chan_d['port'][self.dev].getCalibrationData()
+        chan_d[self.dev]['port'].getCalibrationData()
     
     def init_state(self, args): #fs_range, initial_setp):
         self.fs_range, self.curr_setp = args['fs_range'], args['init_val']
@@ -237,8 +251,8 @@ class analog_mfc():
         return (s*self.max_volt)/self.fs_range
 
     def get_flow(self, args):
-        with chan_d['lock']:
-            try: r = _get_AIN(chan_d['port'][self.dev], self.in_id)
+        with chan_d[self.dev]['lock']:
+            try: r = _get_AIN(chan_d[self.dev]['port'], self.in_id)
             except u6.LabJackException: init_comm()
         # Modified this routine to handle LabjackException
         self.actv_flow = self._volt2sccm(r)
@@ -247,8 +261,8 @@ class analog_mfc():
     def set_flow(self, args):
         s = float(args[0])
         if 0 <= s <= self.fs_range:
-            with chan_d['lock']:
-                r = _set_DAC_output(chan_d['port'][self.dev], self.out_id, self._sccm2volt(s))
+            with chan_d[self.dev]['lock']:
+                _set_DAC_output(chan_d[self.dev]['port'], self.out_id, self._sccm2volt(s))
             self.curr_setp = s
             return 'OK', [repr(s)]
         else: return 'Error', ['Flow is beyond range(0, %f'%(self.fs_range)+'): '+args[0]]
@@ -286,14 +300,14 @@ class LJTickDAC(analog_mfc):
     """Class to control LJTick-DAC outputs connected to a Labjack device"""
     EEPROM_ADDRESS = 0x50
     DAC_ADDRESS = 0x12
-    DAC_Out={'A',48,'B',49}
+    DAC_Out = {'A':48,'B':49}
     # Dictionary to distinguish output channels DACA and DACB. The values corresponding are not clear,
     # but are used in the i2c statement. Therefore it has been set as the out_id.
     def __init__(self, name, LJdev, dioPin, aio_in, aio_out):
         """LJdev corresponds to key of a Labjack device"""
-        super().__init__(name,LJdev,aio_in,DAC_out[aio_out])
+        super().__init__(name, LJdev, aio_in, self.DAC_Out[aio_out])
         ## Using the analog_mfc init function to initialize the necessary fields
-
+ 
         # The pin numbers for the I2C command-response
         self.sclPin = dioPin
         self.sdaPin = self.sclPin + 1
@@ -314,7 +328,7 @@ class LJTickDAC(analog_mfc):
         See datasheet for more info.
 
         """
-        data = chan_d['port'][self.dev].i2c(LJTickDAC.EEPROM_ADDRESS, [64],
+        data = chan_d[self.dev]['port'].i2c(LJTickDAC.EEPROM_ADDRESS, [64],
                                NumI2CBytesToReceive=36, SDAPinNum=self.sdaPin,
                                SCLPinNum=self.sclPin)
         response = data['I2CBytes']
@@ -322,13 +336,13 @@ class LJTickDAC(analog_mfc):
         if aio_out=='A':
             self.slope = self.toDouble(response[0:8])
             self.offset = self.toDouble(response[8:16])
-        elif aio_out=='B'
+        elif aio_out=='B':
             self.slope = self.toDouble(response[16:24])
             self.offset = self.toDouble(response[24:32])
         else:
             msg=f"Wrong analog output port specified on LJTick-DAC for device {self.name}.\
              Please modify the appropriate field in devconfig"
-             raise Exception(msg)
+            raise Exception(msg)
 
         if 255 in response:
             msg = "LJTick-DAC calibration constants seem off. Check that the " \
@@ -343,11 +357,11 @@ class LJTickDAC(analog_mfc):
         """
         binaryA = int(volt*self.slope + self.offset)
 
-        with chan_d['lock']:
-            try: chan_d['port'][self.dev].i2c(LJTickDAC.DAC_ADDRESS,
+        with chan_d[self.dev]['lock']:
+            try: chan_d[self.dev]['port'].i2c(LJTickDAC.DAC_ADDRESS,
                         [self.out_id, binaryA // 256, binaryA % 256],
                         SDAPinNum=self.sdaPin, SCLPinNum=self.sclPin)
-            except u6.LabjackException: init_comm()
+            except u6.LabJackException: init_comm()
 
 
     """ With the lock secured, communiation to the corresponding DAC is initiated. This is essential since

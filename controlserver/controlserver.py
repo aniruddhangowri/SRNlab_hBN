@@ -32,7 +32,7 @@ import test_ch
 
 chans = {'rs232':rs232, 'rs485':rs485, 'labjack':labjack, 'test_ch':test_ch}
 #chans = {'rs232':rs232, 'labjack':labjack, 'test_ch':test_ch}
-for k,v in chans.iteritems(): v.init_comm()
+for k,v in chans.items(): v.init_comm()
 
 # Initializing connections to components.
 # In the case of labjack, function init_comm initializes a dictionary of a thread-Rlock instance
@@ -40,7 +40,7 @@ for k,v in chans.iteritems(): v.init_comm()
 
 import devconfig
 funcmap = {}
-for k, v in devconfig.devlist.iteritems():
+for k, v in devconfig.devlist.items():
     funcmap[k] = chans[v['conn']].funcmap(k, v['devid'])
 
 # now funcmap has the functions available for each of the devices.
@@ -52,17 +52,24 @@ for k, v in devconfig.devlist.iteritems():
 # each class should also have a handle for the corresponding device
 
 
-print "\n\tReading configuration from devconfig.py and initialising the devices."
-for d in devconfig.devlist.iterkeys():
+print("\n\tReading configuration from devconfig.py and initialising the devices.")
+for d in devconfig.devlist.keys():
     if 'init_state' in funcmap[d]: 
-        print "initialising", d
+        print("initialising", d)
         funcmap[d]['init_state'](devconfig.devlist[d]['init_params'])
 # generate the index.html (i.e. the UI seen in browser)
 #devconfig.gen_html_ui()
-print "\n\tDevice initialisation finished."
+print("\n\tDevice initialisation finished.")
 
 def get_response(l, devid, func, args):
     l[devid] = func(args)
+
+""" Class Handler defines the server that will listen to incoming messages in JSON format and handle it appropriately.
+Handler inherits SocketServer.StreamRequestHandler which makes use of streams 
+(file-like objects that simplify communication by providing the standard file interface) for communication.
+If the implementation requires a packet style communication, then SocketServer.BaseRequestHandler class has to be inherited.
+
+ """
 
 class Handler(SocketServer.StreamRequestHandler):
     def __init__(self, request, client_address, server):
@@ -97,10 +104,10 @@ class Handler(SocketServer.StreamRequestHandler):
                         if r['cmd'] == 'startnew':
                             fname = r['args'][0]
                             change_logfile(self.logger, logdir+fname)
-                            print 'changing logfile to', fname
+                            print('changing logfile to', fname)
                         elif r['cmd'] == 'stoplog':
                             change_logfile(self.logger)
-                            print 'changing logfile to default'
+                            print('changing logfile to default')
                         res = d
                         resps = {'controller':['OK', '']}
                         continue
@@ -130,6 +137,6 @@ if __name__ == '__main__':
     import threading
 
     server = multiServer(('0.0.0.0',9999), Handler)
-    print '\n\tListening on:', server.server_address, ' for requests.'
+    print('\n\tListening on:', server.server_address, ' for requests.')
     server.serve_forever()
 

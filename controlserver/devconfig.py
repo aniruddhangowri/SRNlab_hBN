@@ -114,22 +114,22 @@ devlist = { 'tvc':_tvc,\
         'sw-h2-1-by':_sw_h2_1_by, 'sw-ventline':_sw_ventline,\
         'sw-n2-1-by':_sw_n2_1_by}
 def gen_init_js():
-    print 'function init_state() {'
-    for d,p in devlist.iteritems():
+    print('function init_state() {')
+    for d,p in devlist.items():
         if d=='tvc':
-            if p['init_params']['manual-setp'] == 'Close': print "$(\"#tvc-close\").prop(\'checked\', true);"
-            else: print "$(\"#tvc-open\").prop(\'checked\', true);"
+            if p['init_params']['manual-setp'] == 'Close': print("$(\"#tvc-close\").prop(\'checked\', true);")
+            else: print("$(\"#tvc-open\").prop(\'checked\', true);")
             for s in p['init_params']['setpoints']:
-                print "$(\"#setp-%c\").prop(\'checked\', false);"%(s[0])
-                print "$(\"#setp%c-val\").val(\"%f\");"%(s[0], s[2])
-                print "$(\"#setp%c-mode\").val(\"%s\");"%(s[0], s[1])
+                print("$(\"#setp-%c\").prop(\'checked\', false);"%(s[0]))
+                print ("$(\"#setp%c-val\").val(\"%f\");"%(s[0], s[2]))
+                print ("$(\"#setp%c-mode\").val(\"%s\");"%(s[0], s[1]))
         if d[:2]=='sw': # switches
-            if p['init_params']['init_val']=='flow': print "$(\"#b-%s\").text(flow_arrow);"%(d[3:])
-            else: print "$(\"#b-%s\").text(noflow_cross);"%(d[3:])
+            if p['init_params']['init_val']=='flow': print("$(\"#b-%s\").text(flow_arrow);"%(d[3:]))
+            else: print("$(\"#b-%s\").text(noflow_cross);"%(d[3:]))
         if d[:3]=='mfc': # mfcs
-            print "$(\"#%s-mfc-name\").text(\"%s(%f)\");"%(d[4:], d[4:], p['init_params']['fs_range'])
-            print "$(\"#%s-mfc\").val(\"%f\");"%(d[4:], p['init_params']['init_val'])
-    print '}'
-    print 'init_state();'
+            print("$(\"#%s-mfc-name\").text(\"%s(%f)\");"%(d[4:], d[4:], p['init_params']['fs_range']))
+            print("$(\"#%s-mfc\").val(\"%f\");"%(d[4:], p['init_params']['init_val']))
+    print('}')
+    print('init_state();')
 
 
